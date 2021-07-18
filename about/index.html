@@ -386,9 +386,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/banner/0.jpg)');
 </script>
 
 
@@ -650,7 +648,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["架构分析","SpringBoot","Shiro安全控制","毕业设计","SpringCloud","中间件","消息队列"]
+                data: ["架构分析","SpringBoot","Shiro安全控制","中间件","消息队列","毕业设计","SpringCloud"]
             }
         ],
         yAxis: [
