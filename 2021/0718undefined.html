@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="中间件-RabbitMQ与五种消息模型, 蓝海Blog">
+    <meta name="keywords" content="RuoYi管理系统架构分析, 蓝海Blog">
     <meta name="description" content="个人技术博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>中间件-RabbitMQ与五种消息模型 | 蓝海Blog</title>
+    <title>RuoYi管理系统架构分析 | 蓝海Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/awesome/css/all.css">
@@ -205,12 +205,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">中间件-RabbitMQ与五种消息模型</h1>
+                    <h1 class="description center-align post-title">RuoYi管理系统架构分析</h1>
                 </div>
             </div>
         </div>
@@ -326,12 +326,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
-                                <span class="chip bg-color">中间件</span>
+                            <a href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">架构分析</span>
                             </a>
                         
-                            <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
-                                <span class="chip bg-color">消息队列</span>
+                            <a href="/tags/SpringBoot/">
+                                <span class="chip bg-color">SpringBoot</span>
+                            </a>
+                        
+                            <a href="/tags/Shiro%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6/">
+                                <span class="chip bg-color">Shiro安全控制</span>
                             </a>
                         
                     </div>
@@ -342,8 +346,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/" class="post-category">
-                                技术总结
+                            <a href="/categories/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/" class="post-category">
+                                架构分析
                             </a>
                         
                     </div>
@@ -355,7 +359,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-17
+                    2021-07-18
                 </div>
                 
 
@@ -376,128 +380,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1，消息队列"><a href="#1，消息队列" class="headerlink" title="1，消息队列"></a>1，消息队列</h1><p>消息队列，即MQ，Message Queue。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQyfdf"><img src="https://z3.ax1x.com/2021/07/17/WQyfdf.png"></a></p>
-<p>消息队列是典型的：生产者、消费者模型。生产者不断向消息队列中生产消息，消费者不断的从队列中获取消息。因为消息的生产和消费都是异步的，而且只关心消息的发送和接收，没有业务逻辑的侵入，这样就实现了生产者和消费者的解耦。</p>
-<p>MQ是消息通信的模型，并不是具体实现。现在实现MQ的有两种主流方式：AMQP、JMS。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQyjoT"><img src="https://z3.ax1x.com/2021/07/17/WQyjoT.png"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQyxFU"><img src="https://z3.ax1x.com/2021/07/17/WQyxFU.png"></a></p>
-<h5 id="两者间的区别和联系："><a href="#两者间的区别和联系：" class="headerlink" title="两者间的区别和联系："></a>两者间的区别和联系：</h5><ol>
-<li>JMS是定义了统一的接口，来对消息操作进行统一；AMQP是通过规定协议来统一数据交互的格式</li>
-<li>JMS限定了必须使用Java语言；AMQP只是协议，不规定实现方式，因此是跨语言的。</li>
-<li>JMS规定了两种消息模型；而AMQP的消息模型更加丰富</li>
-</ol>
-<h5 id="常见MQ产品"><a href="#常见MQ产品" class="headerlink" title="常见MQ产品"></a>常见MQ产品</h5><ol>
-<li>ActiveMQ：基于JMS</li>
-<li>RabbitMQ：基于AMQP协议，erlang语言开发，稳定性好</li>
-<li>RocketMQ：基于JMS，阿里巴巴产品，目前交由Apache基金会</li>
-<li>Kafka：分布式消息系统，高吞吐量</li>
-</ol>
-<h4 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h4><p>RabbitMQ是基于AMQP的一款消息管理系统</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQyzYF"><img src="https://z3.ax1x.com/2021/07/17/WQyzYF.png"></a></p>
-<h1 id="2，MQ消息模型"><a href="#2，MQ消息模型" class="headerlink" title="2，MQ消息模型"></a>2，MQ消息模型</h1><p>RabbitMQ提供了6种消息模型，但是第6种其实是RPC，并不是MQ。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQ6QOI"><img src="https://z3.ax1x.com/2021/07/17/WQ6QOI.png"></a></p>
-<p>其实3、4、5这三种都属于订阅模型，只不过进行路由的方式不同。</p>
-<h3 id="1，基本消息模型"><a href="#1，基本消息模型" class="headerlink" title="1，基本消息模型"></a>1，基本消息模型</h3><p>RabbitMQ是一个消息代理：它接受和转发消息。 你可以把它想象成一个邮局：当你把邮件放在邮箱里时，你可以确定邮差先生最终会把邮件发送给你的收件人。 在这个比喻中，RabbitMQ是邮政信箱，邮局和邮递员。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQc42Q"><img src="https://z3.ax1x.com/2021/07/17/WQc42Q.png"></a></p>
-<p>P（producer/ publisher）：生产者，一个发送消息的用户应用程序。</p>
-<p>C（consumer）：消费者，消费和接收有类似的意思，消费者是一个主要用来等待接收消息的用户应用程序</p>
-<p>队列（红色区域）：rabbitmq内部类似于邮箱的一个概念。虽然消息流经rabbitmq和你的应用程序，但是它们只能存储在队列中。队列只受主机的内存和磁盘限制，实质上是一个大的消息缓冲区。许多生产者可以发送消息到一个队列，许多消费者可以尝试从一个队列接收数据。</p>
-<p>总结：</p>
-<p>生产者将消息发送到队列，消费者从队列中获取消息，队列是存储消息的缓冲区。</p>
-<h3 id="2，Work消息模型"><a href="#2，Work消息模型" class="headerlink" title="2，Work消息模型"></a>2，Work消息模型</h3><p>工作队列或者竞争消费者模式</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQceH0"><img src="https://z3.ax1x.com/2021/07/17/WQceH0.png"></a></p>
-<p>工作队列，又称任务队列。主要思想就是避免执行资源密集型任务时，必须等待它执行完成。相反我们稍后完成任务，我们将任务封装为消息并将其发送到队列。 在后台运行的工作进程将获取任务并最终执行作业。当你运行许多工人时，任务将在他们之间共享，但是一个消息只能被一个消费者获取。</p>
-<p>这个概念在Web应用程序中特别有用，因为在短的HTTP请求窗口中无法处理复杂的任务。</p>
-<p>面试题：避免消息堆积？</p>
-<p>1） 采用workqueue，多个消费者监听同一队列。</p>
-<p>2）接收到消息以后，而是通过线程池，异步消费。</p>
-<h3 id="3，订阅模型-Fanout"><a href="#3，订阅模型-Fanout" class="headerlink" title="3，订阅模型-Fanout"></a>3，订阅模型-Fanout</h3><p>Fanout，也称为广播。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQgmMd"><img src="https://z3.ax1x.com/2021/07/17/WQgmMd.png"></a></p>
-<p>在广播模式下，消息发送流程是这样的：</p>
-<p>1）  可以有多个消费者</p>
-<p>2）  每个消费者有自己的queue（队列）</p>
-<p>3）  每个队列都要绑定到Exchange（交换机）</p>
-<p>4）  生产者发送的消息，只能发送到交换机，交换机来决定要发给哪个队列，生产者无法决定。</p>
-<p>5）  交换机把消息发送给绑定过的所有队列</p>
-<p>6）  队列的消费者都能拿到消息。实现一条消息被多个消费者消费</p>
-<h3 id="4，订阅模型-Direct"><a href="#4，订阅模型-Direct" class="headerlink" title="4，订阅模型-Direct"></a>4，订阅模型-Direct</h3><p>有选择性的接收消息</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQcuNT"><img src="https://z3.ax1x.com/2021/07/17/WQcuNT.png"></a></p>
-<p>在订阅模式中，生产者发布消息，所有消费者都可以获取所有消息。</p>
-<p>在路由模式中，我们将添加一个功能 - 我们将只能订阅一部分消息。 例如，我们只能将重要的错误消息引导到日志文件（以节省磁盘空间），同时仍然能够在控制台上打印所有日志消息。</p>
-<p>但是，在某些场景下，我们希望不同的消息被不同的队列消费。这时就要用到Direct类型的Exchange。</p>
-<p>在Direct模型下，队列与交换机的绑定，不能是任意绑定了，而是要指定一个RoutingKey（路由key）</p>
-<p>消息的发送方在向Exchange发送消息时，也必须指定消息的routing key。</p>
-<h3 id="5，订阅模型-Topic"><a href="#5，订阅模型-Topic" class="headerlink" title="5，订阅模型-Topic"></a>5，订阅模型-Topic</h3><p>`<a target="_blank" rel="noopener" href="https://imgtu.com/i/WQcnEV"><img src="https://z3.ax1x.com/2021/07/17/WQcnEV.png"></a></p>
-<p>Topic<code>类型的</code>Exchange<code>与</code>Direct<code>相比，都是可以根据</code>RoutingKey<code>把消息路由到不同的队列。只不过</code>Topic<code>类型</code>Exchange<code>可以让队列在绑定</code>Routing key` 的时候使用通配符。</p>
-<p><code>Routingkey</code> 一般都是有一个或多个单词组成，多个单词之间以”.”分割，例如： <code>item.insert</code></p>
-<p> 通配符规则：</p>
-<p>​         <code>#</code>：匹配一个或多个词</p>
-<p>​         <code>*</code>：匹配不多不少恰好1个词</p>
-<p>举例：</p>
-<p>​         <code>audit.#</code>：能够匹配<code>audit.irs.corporate</code> 或者 <code>audit.irs</code></p>
-<p>​         <code>audit.*</code>：只能匹配<code>audit.irs</code></p>
-<h1 id="3，Spring-AMQP"><a href="#3，Spring-AMQP" class="headerlink" title="3，Spring AMQP"></a>3，Spring AMQP</h1><p>Spring有很多不同的项目，其中就有对AMQP的支持：</p>
-<p>Spring AMQP的页面：<a target="_blank" rel="noopener" href="http://spring.io/projects/spring-amqp">http://spring.io/projects/spring-amqp</a></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQ2YtK"><img src="https://z3.ax1x.com/2021/07/17/WQ2YtK.png"></a></p>
-<p>Spring-amqp是对AMQP协议的抽象实现，而spring-rabbit 是对协议的具体实现，也是目前的唯一实现。底层使用的就是RabbitMQ。</p>
-<h4 id="依赖和配置"><a href="#依赖和配置" class="headerlink" title="依赖和配置"></a>依赖和配置</h4><p>添加AMQP的启动器：    </p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-amqp&lt;/artifactId&gt;
-&lt;/dependency&gt;
-</code></pre>
-<p>在<code>application.yml</code>中添加RabbitMQ地址：</p>
-<pre><code>spring:
-  rabbitmq:
-    host: 192.168.*.*
-    username: 
-    password: 
-    virtual-host: /
-</code></pre>
-<h4 id="监听者"><a href="#监听者" class="headerlink" title="监听者"></a>监听者</h4><p>在SpringAMQP中，对消息的消费者进行了封装和抽象，一个普通的JavaBean中的普通方法，只要通过简单的注解，就可以成为一个消费者。</p>
-<pre><code>@Component
-public class Listener &#123;
-
-    @RabbitListener(bindings = @QueueBinding(
-            value = @Queue(value = &quot;spring.test.queue&quot;, durable = &quot;true&quot;),
-            exchange = @Exchange(
-                    value = &quot;spring.test.exchange&quot;,
-                    ignoreDeclarationExceptions = &quot;true&quot;,
-                    type = ExchangeTypes.TOPIC
-            ),
-            key = &#123;&quot;#.#&quot;&#125;))
-    public void listen(String msg)&#123;
-        System.out.println(&quot;接收到消息：&quot; + msg);
-    &#125;
-&#125;
-</code></pre>
-<ul>
-<li><code>@Componet</code>：类上的注解，注册到Spring容器</li>
-<li><code>@RabbitListener</code>：方法上的注解，声明这个方法是一个消费者方法，需要指定下面的属性：<ul>
-<li><code>bindings</code>：指定绑定关系，可以有多个。值是<code>@QueueBinding</code>的数组。<code>@QueueBinding</code>包含下面属性：<ul>
-<li><code>value</code>：这个消费者关联的队列。值是<code>@Queue</code>，代表一个队列</li>
-<li><code>exchange</code>：队列所绑定的交换机，值是<code>@Exchange</code>类型</li>
-<li><code>key</code>：队列和交换机绑定的<code>RoutingKey</code></li>
+                <h1 id="一，项目介绍"><a href="#一，项目介绍" class="headerlink" title="一，项目介绍"></a>一，项目介绍</h1><p>目前公司项目中就有基于RuoYi开发的，因此我认为有必要学习一下。</p>
+<p>官网地址：<a target="_blank" rel="noopener" href="http://ruoyi.vip/">http://ruoyi.vip</a></p>
+<p>RuoYi是一个后台管理系统，基于经典技术组合（Spring Boot、Apache Shiro、MyBatis、Thymeleaf）。主要目的让开发者注重专注业务，降低技术难度，从而节省人力成本，缩短项目周期，提高软件安全质量。</p>
+<p>内置模块如：部门管理、角色用户、菜单及按钮授权、数据权限、系统参数、日志管理、通知公告等。在线定时任务配置；支持集群，支持多数据源，支持分布式事务，可以说是比较全面。</p>
+<h1 id="二，系统架构图"><a href="#二，系统架构图" class="headerlink" title="二，系统架构图"></a>二，系统架构图</h1><p><img src="https://i.loli.net/2021/07/18/uxS3Rkj7pfJwazm.jpg" alt="威克管理系统架构图"></p>
+<h4 id="架构分析："><a href="#架构分析：" class="headerlink" title="架构分析："></a>架构分析：</h4><h5 id="Shiro帮助完成："><a href="#Shiro帮助完成：" class="headerlink" title="Shiro帮助完成："></a>Shiro帮助完成：</h5><p>Authentication 身份认证/登录，验证用户是不是拥有相应的身份<br>Authorization 授权，即验证权限，验证某个已认证的用户是否拥有某个权限，即判断用户是否能做事情 SessionManagement 会话管理，即用户登录后就是一次会话，在没有退出之前，它的所有信息都在会话中<br>Cryptography 加密，保护数据的安全性，如密码加密存储到数据库，而不是明文存储<br>Caching 缓存，比如用户登录后，其用户信息，拥有的角色/权限不必每次去查，提高效率<br>Concurrency Shiro支持多线程应用的并发验证，即如在一个线程中开启另一个线程，能把权限自动传播</p>
+<p>Shiro安全控制会从Auth认证中心获取安全数据（如用户，角色，权限），就是说权限控制服务要验证用户身份， 那么它需要从Auth认证中心获取相应的用户进行比较以确定用户身份是否合法；也需要从Auth认证中心得到用户相应的角色/权限进行验证用户是否能进行操作；</p>
+<h5 id="mybatis-plus实现mybatis增强："><a href="#mybatis-plus实现mybatis增强：" class="headerlink" title="mybatis-plus实现mybatis增强："></a>mybatis-plus实现mybatis增强：</h5><p>Mybatis-Plus 是在 Mybatis 的基础上进行扩展，只做增强不做改变，可以兼容 Mybatis 原生的特性。同时支持通用CRUD操作、多种主键策略、分页、性能分析、全局拦截等。极大帮助我们简化开发工作</p>
+<h5 id="knife4j实现swagger文档增强"><a href="#knife4j实现swagger文档增强" class="headerlink" title="knife4j实现swagger文档增强"></a>knife4j实现swagger文档增强</h5><p>如果不习惯使用swagger可以使用前端UI的增强解决方案knife4j，对比swagger相比有以下优势，友好界面，离线文档，接口排序，安全控制，在线调试，文档清晰，容易上手。</p>
+<h5 id="设备和服务器接入阿里云物联网平台"><a href="#设备和服务器接入阿里云物联网平台" class="headerlink" title="设备和服务器接入阿里云物联网平台"></a>设备和服务器接入阿里云物联网平台</h5><p>在设备管理服务中使用Java SDK接入AMQP服务端订阅消息，物联网平台会将产品下所有已订阅类型的消息，通过AMQP通道推送至服务器。</p>
+<p><img src="https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9093359951/p143709.png"></p>
+<h1 id="三，服务功能"><a href="#三，服务功能" class="headerlink" title="三，服务功能"></a>三，服务功能</h1><ul>
+<li>用户管理：用户是系统操作者，该功能主要完成系统用户配置。</li>
+<li>部门管理：配置系统组织机构（公司、部门、小组），树结构展现支持数据权限。</li>
+<li>岗位管理：配置系统用户所属担任职务。</li>
+<li>菜单管理：配置系统菜单，操作权限，按钮权限标识等。</li>
+<li>角色管理：角色菜单权限分配、设置角色按机构进行数据范围权限划分。</li>
+<li>字典管理：对系统中经常使用的一些较为固定的数据进行维护。</li>
+<li>参数管理：对系统动态配置常用参数。</li>
+<li>通知公告：系统通知公告信息发布维护。</li>
+<li>操作日志：系统正常操作日志记录和查询；系统异常信息日志记录和查询。</li>
+<li>登录日志：系统登录日志记录查询包含登录异常。</li>
+<li>在线用户：当前系统中活跃用户状态监控。</li>
+<li>定时任务：在线（添加、修改、删除)任务调度包含执行结果日志。</li>
+<li>代码生成：前后端代码的生成（java、html、xml、sql)支持CRUD下载 。</li>
+<li>系统接口：根据业务代码自动生成相关的api接口文档。</li>
+<li>服务监控：监视当前系统CPU、内存、磁盘、堆栈等相关信息。</li>
+<li>缓存监控：对系统的缓存查询，查看、清理等操作。</li>
+<li>在线构建器：拖动表单元素生成相应的HTML代码。</li>
+<li>连接池监视：监视当期系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈。</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>类似Listen这样的方法在一个类中可以写多个，就代表多个消费者。</p>
-<h4 id="AmqpTemplate"><a href="#AmqpTemplate" class="headerlink" title="AmqpTemplate"></a>AmqpTemplate</h4><p>Spring为AMQP提供了统一的消息处理模板：AmqpTemplate，非常方便的发送消息，其发送方法：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQRB2F"><img src="https://z3.ax1x.com/2021/07/17/WQRB2F.png"></a></p>
-<p>红框圈起来的是比较常用的3个方法，分别是：</p>
-<ol>
-<li><p>指定交换机、RoutingKey和消息体</p>
-</li>
-<li><p>指定消息</p>
-</li>
-<li><p>指定RoutingKey和消息，会向默认的交换机发送消息</p>
-<p>​</p>
-<p>​</p>
-</li>
-</ol>
+<h1 id="四，文件结构和开发环境"><a href="#四，文件结构和开发环境" class="headerlink" title="四，文件结构和开发环境"></a>四，文件结构和开发环境</h1><pre><code class="tiki">com.ruoyi     
+├── common            // 工具类
+│       └── annotation                    // 自定义注解
+│       └── config                        // 全局配置
+│       └── constant                      // 通用常量
+│       └── core                          // 核心控制
+│       └── enums                         // 通用枚举
+│       └── exception                     // 通用异常
+│       └── json                          // JSON数据处理
+│       └── utils                         // 通用类处理
+│       └── xss                           // XSS过滤处理
+├── framework         // 框架核心
+│       └── aspectj                       // 注解实现
+│       └── config                        // 系统配置
+│       └── datasource                    // 数据权限
+│       └── interceptor                   // 拦截器
+│       └── manager                       // 异步处理
+│       └── shiro                         // 权限控制
+│       └── web                           // 前端控制
+├── ruoyi-generator   // 代码生成（不用可移除）
+├── ruoyi-quartz      // 定时任务（不用可移除）
+├── ruoyi-system      // 系统代码
+├── ruoyi-admin       // 后台服务
+├── ruoyi-xxxxxx      // 其他模块
+</code></pre>
+<h5 id="开发环境："><a href="#开发环境：" class="headerlink" title="开发环境："></a>开发环境：</h5><p>Mysql 推荐5.7版本</p>
+<p>构建工具：Maven</p>
+<p>JDK：JDK1.8</p>
+<p>版本控制：git</p>
 
                 
             </div>
@@ -512,12 +454,16 @@ public class Listener &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
-                                    <span class="chip bg-color">中间件</span>
+                                <a href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">架构分析</span>
                                 </a>
                             
-                                <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
-                                    <span class="chip bg-color">消息队列</span>
+                                <a href="/tags/SpringBoot/">
+                                    <span class="chip bg-color">SpringBoot</span>
+                                </a>
+                            
+                                <a href="/tags/Shiro%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6/">
+                                    <span class="chip bg-color">Shiro安全控制</span>
                                 </a>
                             
                         </div>
@@ -558,9 +504,10 @@ public class Listener &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/0718undefined.html">
                     <div class="card-image">
@@ -578,9 +525,9 @@ public class Listener &#123;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -593,6 +540,7 @@ public class Listener &#123;
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -619,31 +567,31 @@ public class Listener &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/0715undefined.html">
+                <a href="/2021/0717undefined.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="个人毕设—ERP订单管理系统架构分析">
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="中间件-RabbitMQ与五种消息模型">
                         
-                        <span class="card-title">个人毕设—ERP订单管理系统架构分析</span>
+                        <span class="card-title">中间件-RabbitMQ与五种消息模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            该管理系统主要是由商城管理员或者商家进行使用，出于大量订单数据处理与数据保密的需要，现如今的大体量电商商家大多采用自己开发或者购买成品的方式来进行后台数据的处理，因此该系统有一定的技术和商业价值。前后端分离开发，分别有H5和小程序两个版本。
+                            消息队列是典型的：生产者、消费者模型。生产者不断向消息队列中生产消息，消费者不断的从队列中获取消息。因为消息的生产和消费都是异步的，而且只关心消息的发送和接收，没有业务逻辑的侵入，这样就实现了生产者和消费者的解耦。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/" class="post-category">
-                                    架构分析
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93/" class="post-category">
+                                    技术总结
                                 </a>
                             
                             
@@ -653,16 +601,12 @@ public class Listener &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">毕业设计</span>
+                    <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+                        <span class="chip bg-color">中间件</span>
                     </a>
                     
-                    <a href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">架构分析</span>
-                    </a>
-                    
-                    <a href="/tags/SpringCloud/">
-                        <span class="chip bg-color">SpringCloud</span>
+                    <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
+                        <span class="chip bg-color">消息队列</span>
                     </a>
                     
                 </div>
