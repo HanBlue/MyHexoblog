@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="学习笔记—数据结构1, 蓝海Blog">
+    <meta name="keywords" content="算法递归思想总结, 蓝海Blog">
     <meta name="description" content="个人技术博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>学习笔记—数据结构1 | 蓝海Blog</title>
+    <title>算法递归思想总结 | 蓝海Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/awesome/css/all.css">
@@ -313,7 +313,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">学习笔记—数据结构1</h1>
+                    <h1 class="description center-align post-title">算法递归思想总结</h1>
                 </div>
             </div>
         </div>
@@ -442,15 +442,6 @@
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                学习笔记
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
@@ -458,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-27
+                    2021-09-12
                 </div>
                 
 
@@ -479,178 +470,155 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><h4 id="1，简述"><a href="#1，简述" class="headerlink" title="1，简述"></a>1，简述</h4><p>时间复杂度反映了问题规模和运行时间的关系，我们只关心最高次项的项数，更准确地说O代表了运行时间函数的一个渐进上界。</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://tva1.sinaimg.cn/large/008i3skNgy1gpwkf5xfrsj30hs01edg0.jpg"></p>
-<h4 id="2，计算时间复杂度"><a href="#2，计算时间复杂度" class="headerlink" title="2，计算时间复杂度"></a>2，计算时间复杂度</h4><p>一、得出运行时间的函数 </p>
-<p>二、对函数进行简化</p>
-<p>①用常数1来取代运行时间中所有加法常数；</p>
-<p>②修改后的函数中，只保留最高阶项 ③如果最高阶项存在且不是1，则忽略这个项的系数；</p>
-<p>很多时候只需要看看内层函数的执行次数的规律就行了</p>
-<h2 id="跳跃表"><a href="#跳跃表" class="headerlink" title="跳跃表"></a>跳跃表</h2><p>假如用某种数据结构来维护一组有序的 int 型数据的集合，并且希望这个数据结构在插入、删除、查找等操作上能够尽可能着快速。</p>
-<h3 id="1，数组"><a href="#1，数组" class="headerlink" title="1，数组"></a>1，数组</h3><p>查找的时间复杂度为O(log n)，但是增删的时间复杂度为 O(n)。</p>
-<h3 id="2，链表"><a href="#2，链表" class="headerlink" title="2，链表"></a>2，链表</h3><p>增删的时间复杂度为O(1)，查找的时间复杂度为O(n)。</p>
-<h3 id="3，跳跃表"><a href="#3，跳跃表" class="headerlink" title="3，跳跃表"></a>3，跳跃表</h3><p>跳跃表也可以算是链表的一种变形，只是它具有二分查找的功能。</p>
-<p>对于具有 n 个元素的链表，我们可以采取 (logn + 1) 层指针路径的形式，就可以实现在 O(logn) 的时间复杂度内，查找到某个目标元素了。抛硬币来决定新插入结点跨越的层数。</p>
-<h4 id="性质："><a href="#性质：" class="headerlink" title="性质："></a>性质：</h4><p>(1). 跳跃表的每一层都是一条<strong>有序的链表</strong>.</p>
-<p>(2). 跳跃表的查找次数近似于层数，时间复杂度为O(log n)，插入、删除也为 O(log n)。</p>
-<p>(3). 最底层的链表包含所有元素。</p>
-<p>(4). 跳跃表是一种随机化的数据结构(通过抛硬币来决定层数)。</p>
-<p>(5). 跳跃表的空间复杂度为 O(n)。</p>
-<h2 id="二叉堆"><a href="#二叉堆" class="headerlink" title="二叉堆"></a>二叉堆</h2><h3 id="1，完全二叉树"><a href="#1，完全二叉树" class="headerlink" title="1，完全二叉树"></a>1，完全二叉树</h3><p>除了最后一层节点外节点数是满的，并且最后一层节点集中在最左边。</p>
-<h3 id="2，堆"><a href="#2，堆" class="headerlink" title="2，堆"></a>2，堆</h3><p>每个父节点的值都小于等于（大于）其子节点的值。前者称之为小根堆，后者称为大根堆。</p>
-<p>堆的父子关系可以用下标来表示，k的左子节点在2k处，右子节点在2k+1处，父节点为k/2。</p>
-<p>插入时破坏堆的有序性，此时需要进行上浮操作：</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://tva1.sinaimg.cn/large/008i3skNgy1gpwiw2p9ftj30hs08qdg6.jpg"></p>
-<p>删除时需要进行下沉操作：<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://tva1.sinaimg.cn/large/008i3skNgy1gpwj5mg0v9j30hs0ayaaj.jpg"></p>
-<h2 id="平衡树"><a href="#平衡树" class="headerlink" title="平衡树"></a>平衡树</h2><h3 id="1，二叉查找树"><a href="#1，二叉查找树" class="headerlink" title="1，二叉查找树"></a>1，二叉查找树</h3><p>1、若它的左子树不为空，则左子树上所有的节点值都小于它的根节点值。</p>
-<p>2、若它的右子树不为空，则右子树上所有的节点值均大于它的根节点值。</p>
-<p>3、它的左右子树也分别可以充当为二叉查找树。</p>
-<p>查找所需的最大次数等同于二叉查找树的高度。插入通过一层一层的比较，最后找到适合自己的位置。</p>
-<p>左子树和右子树高度差的悬殊的时候性能趋于链表，因此引入平衡树。</p>
-<h3 id="2，AVL树"><a href="#2，AVL树" class="headerlink" title="2，AVL树"></a>2，AVL树</h3><h5 id="特性："><a href="#特性：" class="headerlink" title="特性："></a>特性：</h5><ol>
-<li>具有二叉查找树的全部特性。</li>
-<li>每个节点的左子树和右子树的高度差至多等于1。</li>
-</ol>
-<h5 id="平衡树的插入："><a href="#平衡树的插入：" class="headerlink" title="平衡树的插入："></a>平衡树的插入：</h5><p>所有节点都在左边称为左-左型，此时需要进行右旋操作：顺时针旋转，父节点成为右节点，左子节点成为父节点。</p>
-<p>所有节点都在右边称为右-右型，此时需要进行左旋操作：逆时针旋转，父节点成为左节点，右子节点成为父节点。</p>
-<p>复杂情况有左-右型：此时对父节点左旋，再对祖父节点右旋。</p>
-<p>右-左型的时候：对父节点右旋，再对祖父节点左旋。</p>
-<h5 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h5><pre><code>//定义节点
-class AvlNode &#123;
-   int data;
-   AvlNode lchild;//左孩子
-   AvlNode rchild;//右孩子
-   int height;//记录节点的高度
-&#125;
-//在这里定义各种操作
-public class AVLTree&#123;
-   //计算节点的高度
-   static int height(AvlNode T) &#123;
-       if (T == null) &#123;
-           return -1;
-       &#125;else&#123;
-           return T.height;
-       &#125;
-   &#125;
-
-   //左左型，右旋操作
-   static AvlNode R_Rotate(AvlNode K2) &#123;
-       AvlNode K1；
-       
-       //进行旋转
-       K1 = K2.lchild;
-       K2.lchild = K1.rchild;
-       K1.rchild = K2;
-
-       //重新计算节点的高度
-       K2.height = Math.max(height(K2.lchild), height(K2.rchild)) + 1;
-       K1.height = Math.max(height(K1.lchild), height(K1.rchild)) + 1;
-       return K1;
-   &#125;
-
-   //进行左旋
-   static AvlNode L_Rotate(AvlNode K2) &#123;
-       AvlNode K1;
-       K1 = K2.rchild;
-       K2.rchild = K1.lchild;
-       K1.lchild = K2;
-
-       //重新计算高度
-       K2.height = Math.max(height(K2.lchild), height(K2.rchild)) + 1;
-       K1.height = Math.max(height(K1.lchild), height(K1.rchild)) + 1;
-       return K1;
-
-   &#125;
-
-   //左-右型，进行左旋，再右旋
-   static AvlNode R_L_Rotate(AvlNode K3) &#123;
-
-       //先对其孩子进行左旋
-       K3.lchild = R_Rotate(K3.lchild);
-
-       //再进行右旋
-       return L_Rotate(K3);
-   &#125;
-
-   //右-左型，先进行右旋，再左旋
-   static AvlNode L_R_Rotate(AvlNode K3) &#123;
-
-       //先对孩子进行右旋
-       K3.rchild = L_Rotate(K3.rchild);
-
-       //在左旋
-       return R_Rotate(K3);
-   &#125;
-
-   //插入数值操作
-   static AvlNode insert(int data, AvlNode T) &#123;
-       if (T == null) &#123;
-           T = new AvlNode();
-           T.data = data;
-           T.lchild = T.rchild = null;
-       &#125; else if(data &lt; T.data) &#123;
-
-           //向左孩子递归插入
-           T.lchild = insert(data, T.lchild);
-
-           //进行调整操作
-           //如果左孩子的高度比右孩子大2
-           if (height(T.lchild) - height(T.rchild) == 2) &#123;
-               //左-左型
-               if (data &lt; T.lchild.data) &#123;
-                   T = R_Rotate(T);
-               &#125; else &#123;
-
-                   //左-右型
-                   T = R_L_Rotate(T);
-               &#125;
-           &#125;
-       &#125; else if (data &gt; T.data) &#123;
-           T.rchild = insert(data, T.rchild);
-           
-           //进行调整
-           //右孩子比左孩子高度大2
-           if(height(T.rchild) - height(T.lchild) == 2)
-               //右-右型
-               if (data &gt; T.rchild.data) &#123;
-                   T = L_Rotate(T);
-               &#125; else &#123;
-                   T = L_R_Rotate(T);
-               &#125;
-       &#125;
-
-       //否则，这个节点已经在书上存在了，我们什么也不做
-       //重新计算T的高度
-       T.height = Math.max(height(T.lchild), height(T.rchild)) + 1;
-       return T;
-   &#125;
+                <h2 id="一、递归三大要素"><a href="#一、递归三大要素" class="headerlink" title="一、递归三大要素"></a>一、递归三大要素</h2><p><strong>第一要素：明确你这个函数想要干什么</strong></p>
+<p>对于递归，我觉得很重要的一个事就是，<strong>这个函数的功能是什么</strong>，他要完成什么样的一件事，而这个，是完全由你自己来定义的。也就是说，我们先不管函数里面的代码什么，而是要先明白，你这个函数是要用来干什么。</p>
+<p><strong>第二要素：寻找递归结束条件</strong></p>
+<p>所谓递归，就是会在函数内部代码中，调用这个函数本身，所以，我们必须要找出<strong>递归的结束条件</strong>，不然的话，会一直调用自己，进入无底洞。也就是说，我们需要找出<strong>当参数为啥时，递归结束，之后直接把结果返回</strong>。</p>
+<p><strong>第三要素：找出函数的等价关系式</strong></p>
+<p>第三要素就是，我们要<strong>不断缩小参数的范围</strong>，缩小之后，我们可以通过一些辅助的变量或者操作，使原函数的结果不变。</p>
+<h2 id="二、常见题目"><a href="#二、常见题目" class="headerlink" title="二、常见题目"></a>二、常见题目</h2><h4 id="1-反转单链表"><a href="#1-反转单链表" class="headerlink" title="1.反转单链表"></a>1.反转单链表</h4><pre><code class="java">//用递归的方法反转链表
+public static Node reverseList(Node head)&#123;
+    //递归结束条件
+    if(head == null || head.next ==null)&#123;
+        return head;
+    &#125;
+    //递归反转子表链
+    Node newList = reverseList(head.next);
+    //改变1，2节点的指向
+    Node t1 = head.next;
+    t1.next = head;
+    head.next = null;
+    return newList;
 &#125;
 </code></pre>
-<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><p>红黑树和上面的平衡二叉树类似，本质上都是为了解决排序二叉树在极端情况下退化成链表导致检索效率大大降低的问题。它在每个节点上增加了一个存储位来表示节点的颜色，可以是 RED 或 BLACK。</p>
-<h4 id="特性：-1"><a href="#特性：-1" class="headerlink" title="特性："></a>特性：</h4><ul>
-<li>性质1：每个节点要么是红色，要么是黑色。</li>
-<li>性质2：根节点永远是黑色的。</li>
-<li>性质3：所有的叶子节点都是空节点（即null），并且是黑色的。</li>
-<li>性质4：每个红色节点的两个子节点都是黑色。（从每个叶子到根的路径上不会有两个连续的红色节点。）</li>
-<li>性质5：从任一节点到其子树中每个叶子节点的路径都包含相同数量的黑色节点。</li>
-</ul>
-<p>红黑树在最差情况下，最长的路径都不会比最短的路径长出两倍。在实际应用用，红黑树的统计性能要高于平衡二叉树，但极端性能略差。</p>
-<h4 id="插入："><a href="#插入：" class="headerlink" title="插入："></a>插入：</h4><p>一般情况下，红黑树中新插入的节点都是红色的，首先要找到当前要插入的节点适合放在排序二叉树哪个位置，然后调整红黑树的结构让树保持平衡。</p>
-<h4 id="调整："><a href="#调整：" class="headerlink" title="调整："></a>调整：</h4><p>通过变色和旋转来实现，旋转原理与AVL树基本一致。</p>
-<h5 id="左左（插入节点的父节点是左节点，插入节点也是左节点）"><a href="#左左（插入节点的父节点是左节点，插入节点也是左节点）" class="headerlink" title="左左（插入节点的父节点是左节点，插入节点也是左节点）"></a>左左（插入节点的父节点是左节点，插入节点也是左节点）</h5><p>祖父节点右旋，然后将原来的父节点与祖父节点变色。</p>
-<h5 id="左右（插入节点的父节点是左节点，插入节点是右节点）"><a href="#左右（插入节点的父节点是左节点，插入节点是右节点）" class="headerlink" title="左右（插入节点的父节点是左节点，插入节点是右节点）"></a>左右（插入节点的父节点是左节点，插入节点是右节点）</h5><p>父节点左旋，再将祖父节点右旋，然后将原来的祖父节点与插入节点变色。</p>
-<h5 id="右右（插入节点的父节点是右节点，插入节点也是右节点）"><a href="#右右（插入节点的父节点是右节点，插入节点也是右节点）" class="headerlink" title="右右（插入节点的父节点是右节点，插入节点也是右节点）"></a>右右（插入节点的父节点是右节点，插入节点也是右节点）</h5><p>祖父节点左旋，然后将原来的父节点与祖父节点变色。</p>
-<h5 id="右左（插入节点的父节点是右节点，插入节点左节点）"><a href="#右左（插入节点的父节点是右节点，插入节点左节点）" class="headerlink" title="右左（插入节点的父节点是右节点，插入节点左节点）"></a>右左（插入节点的父节点是右节点，插入节点左节点）</h5><p>父节点右旋，再将祖父节点左旋，然后将原来的祖父节点与插入节点变色。</p>
-<h4 id="删除："><a href="#删除：" class="headerlink" title="删除："></a>删除：</h4><h5 id="1、删除节点是根节点"><a href="#1、删除节点是根节点" class="headerlink" title="1、删除节点是根节点"></a>1、删除节点是根节点</h5><p>直接删除根节点即可。</p>
-<h5 id="2、删掉节点的左子节点和右子节点都是为空"><a href="#2、删掉节点的左子节点和右子节点都是为空" class="headerlink" title="2、删掉节点的左子节点和右子节点都是为空"></a>2、删掉节点的左子节点和右子节点都是为空</h5><p>直接删除当前节点即可。</p>
-<h5 id="3、删除节点有一个子节点不为空"><a href="#3、删除节点有一个子节点不为空" class="headerlink" title="3、删除节点有一个子节点不为空"></a>3、删除节点有一个子节点不为空</h5><p>这个时候需要使用子节点来代替当前需要删除的节点，然后再把子节点删除即可；</p>
-<p>若待删除节点是黑色的，将另一个·子节点调成红色。</p>
-<h5 id="4、删除节点两个子节点都不为空"><a href="#4、删除节点两个子节点都不为空" class="headerlink" title="4、删除节点两个子节点都不为空"></a>4、删除节点两个子节点都不为空</h5><p>先找到替代节点，也就是前驱节点或者后继节点；</p>
-<p>前驱是左子树中最大的节点，后继则是右子树中最小的节点；</p>
-<p>然后把前驱节点或者后继节点复制到当前待删除节点的位置，然后在删除前驱节点或者后继节点。</p>
-<h2 id="trie树"><a href="#trie树" class="headerlink" title="trie树"></a>trie树</h2><p>trie 树也称为字典树、单词查找树，最大的特点就是共享字符串的公共前缀来达到节省空间的目的。像我们有时候在百度、谷歌输入某个关键字的时候，它会给我们列举出很多相关的信息。</p>
-<p>树的根节点不存任何数据，每整个个分支代表一个完整的字符串。</p>
-<p>在实现敏感词过滤时，敏感词的长度为 m，字符串的长度为 n，时间复杂度为O(m*n)。</p>
+<h4 id="2-二叉树前序遍历求最大深度"><a href="#2-二叉树前序遍历求最大深度" class="headerlink" title="2.二叉树前序遍历求最大深度"></a>2.二叉树前序遍历求最大深度</h4><p>1、从根节点开始，每下降一层，就将深度+1</p>
+<p>2、用全局变量来记录下最大深度</p>
+<p>3、每当达到叶子节点时就与全局变量进行比较和更新</p>
+<pre><code class="java">class Solution&#123;
+    //用全局变量存放结果
+    int res = 0;
+    public int maxDepth(TreeNode root)&#123;
+        //遍历开始深度为0
+        dfs&#123;root，0&#125;；
+        //返回结果
+        return this.res;
+    &#125;
+    
+    public void dfs(root, int length)&#123;
+        //到达叶子节点时更新结果
+        if(root == null)&#123;
+            //选取最深的叶子节点作为结果
+            res = Math.max(this.res,length);
+            return;
+        &#125;
+        //节点有值时，深度+1
+        dfs(root.left,length+1);//递归左节点
+        dfs(root.right,length+1);//递归右节点
+    &#125;
+&#125;
+</code></pre>
+<h4 id="3-二叉树后序遍历求最大深度"><a href="#3-二叉树后序遍历求最大深度" class="headerlink" title="3.二叉树后序遍历求最大深度"></a>3.二叉树后序遍历求最大深度</h4><p>1、若我们知道两个叶子节点的长度，那么我们就能通过两个叶子的最大深度再+1，得到根节点的最大深度。</p>
+<p>2、而这种先知道两个子节点，再知道根节点恰好符合后序遍历的特点，具体看代码。</p>
+<pre><code class="java">class Solution&#123;
+    public int maxDepth(TreeNode root)&#123;
+        return dfs(root);
+    &#125;
+    public int dfs(root)&#123;
+        //空节点时深度为0
+        if(root == null)&#123;
+            return 0;
+        &#125;
+        //遍历左右节点得到左右节点最大深度
+        int leftLength = dfs(root.left);
+        int rightLength = dfs(root.right);
+        //比较得到最大深度+1
+        return Math.max(leftLength,rightLength) + 1;
+    &#125;
+&#125;
+</code></pre>
+<h4 id="4-二叉树层序遍历求最大深度"><a href="#4-二叉树层序遍历求最大深度" class="headerlink" title="4.二叉树层序遍历求最大深度"></a>4.二叉树层序遍历求最大深度</h4><p>1、使用队列来存放节点。</p>
+<p>2、一开始先知道当前层数的节点个数，然后根据个数出队，并对其孩子节点入队。</p>
+<pre><code class="java">class Solution&#123;
+    public int maxDepth(TreeNode root)&#123;
+        if(root == null) return 0;
+        //创建队列
+        Deque&lt;TreeNode&gt; deque = new LinkedList&lt;&gt;();
+        deque.oofer(root);
+        int res = 0;
+        //队列不为空时
+        whlie (!deque.isEmpty())&#123;
+            //层数
+            res += 1;
+            //找到当前层的节点数
+            int length = deque.size();
+            //清空当前层,并把子节点入队
+            for(int i=0;i&lt;length;i++)&#123;
+                TreeNode node = deque.pollFirst();
+                if(node.left != null)
+                    deque.offer(node.left());
+                if(node.right != null)
+                    deque.offer(node.right());
+            &#125;
+        &#125;
+        return res;
+    &#125;
+&#125;
+</code></pre>
+<h4 id="5-求x的整数次方"><a href="#5-求x的整数次方" class="headerlink" title="5.求x的整数次方"></a>5.求x的整数次方</h4><p>这道题是典型的<strong>快速幂算法</strong>。</p>
+<p>假设求 7 ^ 11 若将 n 用二进制来表示，则有 11 = 1011 那么 7 ^ 11 可以看成是 7 ^ 11 = 7^1 * 7^2 * 7^0 * 7^8 = 7^1 * 7^2 * 7^8 。</p>
+<p>故我们可以每次判断 n 的二进制数中的最后一位数字是否是 1 ，是的话结果就必须乘 x，若不是的话，就不处理。 不过不管是不是，x 每一轮都要翻倍。 </p>
+<p>解决快速幂后，就解决正负数的问题。 一开始没有考虑到 2^31 次方的问题（取相反数后也是 2^31 次方） 故需要用一个 long 类型来接收 n，然后再去取相反数。</p>
+<p> 先判断 n </p>
+<p>（1）正数，不用做操作 </p>
+<p>（2）0，直接返回 0 </p>
+<p>（3）负数，转为正数并将 x 倒过来。</p>
+<pre><code class="java">class Solution &#123;
+    public double pow(double x,int n)&#123;
+        if(x == 0)&#123;
+            return 0;
+        &#125;
+        double res = 1.0;//存放结果
+        long b = n;//考虑负数情况
+        if(n&lt;0)&#123;
+            x = 1/x;
+            b = -b;
+        &#125;
+        return quitPow(x,b);
+    &#125; 
+    
+    public double quitPow(double x,long n)&#123;
+        if(n == 0)&#123;
+            return 1;
+        &#125;
+        //判断 &amp; 二进制数最后一位是否为1，&gt;&gt;= 是逐位二进制计算。
+        if（(n &amp; 1) == 1）
+            return x * quitPow(x*x,n &gt;&gt;1);
+        return quitPow(x*x,n &gt;&gt; 1);
+    &#125;
+&#125;
+</code></pre>
+<p>非递归形式</p>
+<pre><code class="java">class Solution&#123;
+    public double Pow(double x ,int n)&#123;
+        if(x == 0)&#123;
+            return 0;
+        &#125;
+        double res = 1.0;
+        long b = n;
+        if(n &lt; 0)&#123;
+            x = 1/x;
+            b = -b;
+        &#125;
+        while(b &gt; 0)&#123;
+            if((b &amp; 1) == 1)
+                res *= x;
+            x *= x;
+            b &gt;&gt;= 1;
+        &#125;
+        return res;
+    &#125;
+&#125;
+</code></pre>
 
                 
             </div>
@@ -711,29 +679,30 @@ public class AVLTree&#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/0728undefined.html">
+                <a href="/2021/0912undefined.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="毕业设计展示—ERP订单管理系统">
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="算法递归思想总结">
                         
-                        <span class="card-title">毕业设计展示—ERP订单管理系统</span>
+                        <span class="card-title">算法递归思想总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            经过5个月的努力，终于将自己的毕业设计基本上完成。系统的核心功能是商品管理和订单管理，此外还有权限管理与系统管理两个非核心功能。
+                            递归思想三大要素以及反转链表、二叉树前序、后序和层序遍历、求x的整数次方。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -742,15 +711,16 @@ public class AVLTree&#123;
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">毕业设计</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
                     </a>
                     
-                    <a href="/tags/%E6%88%90%E6%9E%9C%E5%B1%95%E7%A4%BA/">
-                        <span class="chip bg-color">成果展示</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
@@ -764,31 +734,31 @@ public class AVLTree&#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/0718undefined.html">
+                <a href="/2021/0827undefined.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="RuoYi管理系统架构分析">
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="常用数据结构">
                         
-                        <span class="card-title">RuoYi管理系统架构分析</span>
+                        <span class="card-title">常用数据结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            RuoYi是一个后台管理系统，基于经典技术组合（Spring Boot、Apache Shiro、MyBatis、Thymeleaf）主要目的让开发者注重专注业务，降低技术难度，从而节省人力成本，缩短项目周期，提高软件安全质量。
+                            时间复杂度、跳跃表、二叉堆、平衡树、红黑树、字典树等知识；
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/" class="post-category">
-                                    架构分析
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -798,16 +768,12 @@ public class AVLTree&#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">架构分析</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
                     </a>
                     
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
-                    </a>
-                    
-                    <a href="/tags/Shiro%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6/">
-                        <span class="chip bg-color">Shiro安全控制</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
