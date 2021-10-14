@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -476,93 +476,93 @@
 <p>所谓递归，就是会在函数内部代码中，调用这个函数本身，所以，我们必须要找出<strong>递归的结束条件</strong>，不然的话，会一直调用自己，进入无底洞。也就是说，我们需要找出<strong>当参数为啥时，递归结束，之后直接把结果返回</strong>。</p>
 <p><strong>第三要素：找出函数的等价关系式</strong></p>
 <p>第三要素就是，我们要<strong>不断缩小参数的范围</strong>，缩小之后，我们可以通过一些辅助的变量或者操作，使原函数的结果不变。</p>
-<h2 id="二、常见题目"><a href="#二、常见题目" class="headerlink" title="二、常见题目"></a>二、常见题目</h2><h4 id="1-反转单链表"><a href="#1-反转单链表" class="headerlink" title="1.反转单链表"></a>1.反转单链表</h4><pre><code class="java">//用递归的方法反转链表
-public static Node reverseList(Node head)&#123;
-    //递归结束条件
-    if(head == null || head.next ==null)&#123;
-        return head;
-    &#125;
-    //递归反转子表链
-    Node newList = reverseList(head.next);
-    //改变1，2节点的指向
-    Node t1 = head.next;
-    t1.next = head;
-    head.next = null;
-    return newList;
-&#125;
+<h2 id="二、常见题目"><a href="#二、常见题目" class="headerlink" title="二、常见题目"></a>二、常见题目</h2><h4 id="1-反转单链表"><a href="#1-反转单链表" class="headerlink" title="1.反转单链表"></a>1.反转单链表</h4><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//用递归的方法反转链表</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> Node <span class="token function">reverseList</span><span class="token punctuation">(</span>Node head<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//递归结束条件</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next <span class="token operator">==</span>null<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//递归反转子表链</span>
+    Node newList <span class="token operator">=</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//改变1，2节点的指向</span>
+    Node t1 <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    t1<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    head<span class="token punctuation">.</span>next <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> newList<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="2-二叉树前序遍历求最大深度"><a href="#2-二叉树前序遍历求最大深度" class="headerlink" title="2.二叉树前序遍历求最大深度"></a>2.二叉树前序遍历求最大深度</h4><p>1、从根节点开始，每下降一层，就将深度+1</p>
 <p>2、用全局变量来记录下最大深度</p>
 <p>3、每当达到叶子节点时就与全局变量进行比较和更新</p>
-<pre><code class="java">class Solution&#123;
-    //用全局变量存放结果
-    int res = 0;
-    public int maxDepth(TreeNode root)&#123;
-        //遍历开始深度为0
-        dfs&#123;root，0&#125;；
-        //返回结果
-        return this.res;
-    &#125;
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//用全局变量存放结果</span>
+    <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">maxDepth</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//遍历开始深度为0</span>
+        dfs<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>root，<span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>；
+        <span class="token comment" spellcheck="true">//返回结果</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>res<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     
-    public void dfs(root, int length)&#123;
-        //到达叶子节点时更新结果
-        if(root == null)&#123;
-            //选取最深的叶子节点作为结果
-            res = Math.max(this.res,length);
-            return;
-        &#125;
-        //节点有值时，深度+1
-        dfs(root.left,length+1);//递归左节点
-        dfs(root.right,length+1);//递归右节点
-    &#125;
-&#125;
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token keyword">int</span> length<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//到达叶子节点时更新结果</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//选取最深的叶子节点作为结果</span>
+            res <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>res<span class="token punctuation">,</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//节点有值时，深度+1</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span>length<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//递归左节点</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span>length<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//递归右节点</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="3-二叉树后序遍历求最大深度"><a href="#3-二叉树后序遍历求最大深度" class="headerlink" title="3.二叉树后序遍历求最大深度"></a>3.二叉树后序遍历求最大深度</h4><p>1、若我们知道两个叶子节点的长度，那么我们就能通过两个叶子的最大深度再+1，得到根节点的最大深度。</p>
 <p>2、而这种先知道两个子节点，再知道根节点恰好符合后序遍历的特点，具体看代码。</p>
-<pre><code class="java">class Solution&#123;
-    public int maxDepth(TreeNode root)&#123;
-        return dfs(root);
-    &#125;
-    public int dfs(root)&#123;
-        //空节点时深度为0
-        if(root == null)&#123;
-            return 0;
-        &#125;
-        //遍历左右节点得到左右节点最大深度
-        int leftLength = dfs(root.left);
-        int rightLength = dfs(root.right);
-        //比较得到最大深度+1
-        return Math.max(leftLength,rightLength) + 1;
-    &#125;
-&#125;
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">maxDepth</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//空节点时深度为0</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//遍历左右节点得到左右节点最大深度</span>
+        <span class="token keyword">int</span> leftLength <span class="token operator">=</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> rightLength <span class="token operator">=</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//比较得到最大深度+1</span>
+        <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>leftLength<span class="token punctuation">,</span>rightLength<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="4-二叉树层序遍历求最大深度"><a href="#4-二叉树层序遍历求最大深度" class="headerlink" title="4.二叉树层序遍历求最大深度"></a>4.二叉树层序遍历求最大深度</h4><p>1、使用队列来存放节点。</p>
 <p>2、一开始先知道当前层数的节点个数，然后根据个数出队，并对其孩子节点入队。</p>
-<pre><code class="java">class Solution&#123;
-    public int maxDepth(TreeNode root)&#123;
-        if(root == null) return 0;
-        //创建队列
-        Deque&lt;TreeNode&gt; deque = new LinkedList&lt;&gt;();
-        deque.oofer(root);
-        int res = 0;
-        //队列不为空时
-        whlie (!deque.isEmpty())&#123;
-            //层数
-            res += 1;
-            //找到当前层的节点数
-            int length = deque.size();
-            //清空当前层,并把子节点入队
-            for(int i=0;i&lt;length;i++)&#123;
-                TreeNode node = deque.pollFirst();
-                if(node.left != null)
-                    deque.offer(node.left());
-                if(node.right != null)
-                    deque.offer(node.right());
-            &#125;
-        &#125;
-        return res;
-    &#125;
-&#125;
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">maxDepth</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//创建队列</span>
+        Deque<span class="token operator">&lt;</span>TreeNode<span class="token operator">></span> deque <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        deque<span class="token punctuation">.</span><span class="token function">oofer</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//队列不为空时</span>
+        <span class="token function">whlie</span> <span class="token punctuation">(</span><span class="token operator">!</span>deque<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//层数</span>
+            res <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//找到当前层的节点数</span>
+            <span class="token keyword">int</span> length <span class="token operator">=</span> deque<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//清空当前层,并把子节点入队</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                TreeNode node <span class="token operator">=</span> deque<span class="token punctuation">.</span><span class="token function">pollFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+                    deque<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token function">left</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right <span class="token operator">!=</span> null<span class="token punctuation">)</span>
+                    deque<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token function">right</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <h4 id="5-求x的整数次方"><a href="#5-求x的整数次方" class="headerlink" title="5.求x的整数次方"></a>5.求x的整数次方</h4><p>这道题是典型的<strong>快速幂算法</strong>。</p>
 <p>假设求 7 ^ 11 若将 n 用二进制来表示，则有 11 = 1011 那么 7 ^ 11 可以看成是 7 ^ 11 = 7^1 * 7^2 * 7^0 * 7^8 = 7^1 * 7^2 * 7^8 。</p>
@@ -572,52 +572,52 @@ public static Node reverseList(Node head)&#123;
 <p>（1）正数，不用做操作 </p>
 <p>（2）0，直接返回 0 </p>
 <p>（3）负数，转为正数并将 x 倒过来。</p>
-<pre><code class="java">class Solution &#123;
-    public double pow(double x,int n)&#123;
-        if(x == 0)&#123;
-            return 0;
-        &#125;
-        double res = 1.0;//存放结果
-        long b = n;//考虑负数情况
-        if(n&lt;0)&#123;
-            x = 1/x;
-            b = -b;
-        &#125;
-        return quitPow(x,b);
-    &#125; 
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">pow</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token keyword">double</span> res <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//存放结果</span>
+        <span class="token keyword">long</span> b <span class="token operator">=</span> n<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//考虑负数情况</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            x <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span>x<span class="token punctuation">;</span>
+            b <span class="token operator">=</span> <span class="token operator">-</span>b<span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">quitPow</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
     
-    public double quitPow(double x,long n)&#123;
-        if(n == 0)&#123;
-            return 1;
-        &#125;
-        //判断 &amp; 二进制数最后一位是否为1，&gt;&gt;= 是逐位二进制计算。
-        if（(n &amp; 1) == 1）
-            return x * quitPow(x*x,n &gt;&gt;1);
-        return quitPow(x*x,n &gt;&gt; 1);
-    &#125;
-&#125;
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">quitPow</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">,</span><span class="token keyword">long</span> n<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//判断 &amp; 二进制数最后一位是否为1，>>= 是逐位二进制计算。</span>
+        <span class="token keyword">if</span>（<span class="token punctuation">(</span>n <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span>）
+            <span class="token keyword">return</span> x <span class="token operator">*</span> <span class="token function">quitPow</span><span class="token punctuation">(</span>x<span class="token operator">*</span>x<span class="token punctuation">,</span>n <span class="token operator">>></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">quitPow</span><span class="token punctuation">(</span>x<span class="token operator">*</span>x<span class="token punctuation">,</span>n <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <p>非递归形式</p>
-<pre><code class="java">class Solution&#123;
-    public double Pow(double x ,int n)&#123;
-        if(x == 0)&#123;
-            return 0;
-        &#125;
-        double res = 1.0;
-        long b = n;
-        if(n &lt; 0)&#123;
-            x = 1/x;
-            b = -b;
-        &#125;
-        while(b &gt; 0)&#123;
-            if((b &amp; 1) == 1)
-                res *= x;
-            x *= x;
-            b &gt;&gt;= 1;
-        &#125;
-        return res;
-    &#125;
-&#125;
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">Pow</span><span class="token punctuation">(</span><span class="token keyword">double</span> x <span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token keyword">double</span> res <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> b <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            x <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span>x<span class="token punctuation">;</span>
+            b <span class="token operator">=</span> <span class="token operator">-</span>b<span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>b <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>b <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                res <span class="token operator">*=</span> x<span class="token punctuation">;</span>
+            x <span class="token operator">*=</span> x<span class="token punctuation">;</span>
+            b <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 
                 
@@ -679,30 +679,29 @@ public static Node reverseList(Node head)&#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/0912undefined.html">
+                <a href="/2021/0928undefined.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="算法递归思想总结">
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="算法动态规划思想总结">
                         
-                        <span class="card-title">算法递归思想总结</span>
+                        <span class="card-title">算法动态规划思想总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            递归思想三大要素以及反转链表、二叉树前序、后序和层序遍历、求x的整数次方。
+                            动态规划三大步骤，常见题目如跳台阶、求路径、矩阵的最小路径和、连续子数组最大和。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -711,7 +710,6 @@ public static Node reverseList(Node head)&#123;
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1179,12 +1177,6 @@ $(function () {
 	
 
 
-<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                preloadRatio: 1,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+500||document.documentElement.clientHeight+500)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</body>
 
 </html>
