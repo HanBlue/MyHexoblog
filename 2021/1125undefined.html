@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="中间件—RabbitMQ与五种消息模型, 蓝海Blog">
+    <meta name="keywords" content="学习笔记—《机器学习》, 蓝海Blog">
     <meta name="description" content="个人技术博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>中间件—RabbitMQ与五种消息模型 | 蓝海Blog</title>
+    <title>学习笔记—《机器学习》 | 蓝海Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">中间件—RabbitMQ与五种消息模型</h1>
+                    <h1 class="description center-align post-title">学习笔记—《机器学习》</h1>
                 </div>
             </div>
         </div>
@@ -429,18 +429,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
-                                <span class="chip bg-color">中间件</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
-                                <span class="chip bg-color">消息队列</span>
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -449,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-17
+                    2021-11-25
                 </div>
                 
 
@@ -470,128 +475,81 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1，消息队列"><a href="#1，消息队列" class="headerlink" title="1，消息队列"></a>1，消息队列</h1><p>消息队列，即MQ，Message Queue。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQyfdf"><img src="https://z3.ax1x.com/2021/07/17/WQyfdf.png"></a></p>
-<p>消息队列是典型的：生产者、消费者模型。生产者不断向消息队列中生产消息，消费者不断的从队列中获取消息。因为消息的生产和消费都是异步的，而且只关心消息的发送和接收，没有业务逻辑的侵入，这样就实现了生产者和消费者的解耦。</p>
-<p>MQ是消息通信的模型，并不是具体实现。现在实现MQ的有两种主流方式：AMQP、JMS。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQyjoT"><img src="https://z3.ax1x.com/2021/07/17/WQyjoT.png"></a></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQyxFU"><img src="https://z3.ax1x.com/2021/07/17/WQyxFU.png"></a></p>
-<h5 id="两者间的区别和联系："><a href="#两者间的区别和联系：" class="headerlink" title="两者间的区别和联系："></a>两者间的区别和联系：</h5><ol>
-<li>JMS是定义了统一的接口，来对消息操作进行统一；AMQP是通过规定协议来统一数据交互的格式</li>
-<li>JMS限定了必须使用Java语言；AMQP只是协议，不规定实现方式，因此是跨语言的。</li>
-<li>JMS规定了两种消息模型；而AMQP的消息模型更加丰富</li>
-</ol>
-<h5 id="常见MQ产品"><a href="#常见MQ产品" class="headerlink" title="常见MQ产品"></a>常见MQ产品</h5><ol>
-<li>ActiveMQ：基于JMS</li>
-<li>RabbitMQ：基于AMQP协议，erlang语言开发，稳定性好</li>
-<li>RocketMQ：基于JMS，阿里巴巴产品，目前交由Apache基金会</li>
-<li>Kafka：分布式消息系统，高吞吐量</li>
-</ol>
-<h4 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h4><p>RabbitMQ是基于AMQP的一款消息管理系统</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQyzYF"><img src="https://z3.ax1x.com/2021/07/17/WQyzYF.png"></a></p>
-<h1 id="2，MQ消息模型"><a href="#2，MQ消息模型" class="headerlink" title="2，MQ消息模型"></a>2，MQ消息模型</h1><p>RabbitMQ提供了6种消息模型，但是第6种其实是RPC，并不是MQ。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQ6QOI"><img src="https://z3.ax1x.com/2021/07/17/WQ6QOI.png"></a></p>
-<p>其实3、4、5这三种都属于订阅模型，只不过进行路由的方式不同。</p>
-<h3 id="1，基本消息模型"><a href="#1，基本消息模型" class="headerlink" title="1，基本消息模型"></a>1，基本消息模型</h3><p>RabbitMQ是一个消息代理：它接受和转发消息。 你可以把它想象成一个邮局：当你把邮件放在邮箱里时，你可以确定邮差先生最终会把邮件发送给你的收件人。 在这个比喻中，RabbitMQ是邮政信箱，邮局和邮递员。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQc42Q"><img src="https://z3.ax1x.com/2021/07/17/WQc42Q.png"></a></p>
-<p>P（producer/ publisher）：生产者，一个发送消息的用户应用程序。</p>
-<p>C（consumer）：消费者，消费和接收有类似的意思，消费者是一个主要用来等待接收消息的用户应用程序</p>
-<p>队列（红色区域）：rabbitmq内部类似于邮箱的一个概念。虽然消息流经rabbitmq和你的应用程序，但是它们只能存储在队列中。队列只受主机的内存和磁盘限制，实质上是一个大的消息缓冲区。许多生产者可以发送消息到一个队列，许多消费者可以尝试从一个队列接收数据。</p>
-<p>总结：</p>
-<p>生产者将消息发送到队列，消费者从队列中获取消息，队列是存储消息的缓冲区。</p>
-<h3 id="2，Work消息模型"><a href="#2，Work消息模型" class="headerlink" title="2，Work消息模型"></a>2，Work消息模型</h3><p>工作队列或者竞争消费者模式</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQceH0"><img src="https://z3.ax1x.com/2021/07/17/WQceH0.png"></a></p>
-<p>工作队列，又称任务队列。主要思想就是避免执行资源密集型任务时，必须等待它执行完成。相反我们稍后完成任务，我们将任务封装为消息并将其发送到队列。 在后台运行的工作进程将获取任务并最终执行作业。当你运行许多工人时，任务将在他们之间共享，但是一个消息只能被一个消费者获取。</p>
-<p>这个概念在Web应用程序中特别有用，因为在短的HTTP请求窗口中无法处理复杂的任务。</p>
-<p>面试题：避免消息堆积？</p>
-<p>1） 采用workqueue，多个消费者监听同一队列。</p>
-<p>2）接收到消息以后，而是通过线程池，异步消费。</p>
-<h3 id="3，订阅模型-Fanout"><a href="#3，订阅模型-Fanout" class="headerlink" title="3，订阅模型-Fanout"></a>3，订阅模型-Fanout</h3><p>Fanout，也称为广播。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQgmMd"><img src="https://z3.ax1x.com/2021/07/17/WQgmMd.png"></a></p>
-<p>在广播模式下，消息发送流程是这样的：</p>
-<p>1）  可以有多个消费者</p>
-<p>2）  每个消费者有自己的queue（队列）</p>
-<p>3）  每个队列都要绑定到Exchange（交换机）</p>
-<p>4）  生产者发送的消息，只能发送到交换机，交换机来决定要发给哪个队列，生产者无法决定。</p>
-<p>5）  交换机把消息发送给绑定过的所有队列</p>
-<p>6）  队列的消费者都能拿到消息。实现一条消息被多个消费者消费</p>
-<h3 id="4，订阅模型-Direct"><a href="#4，订阅模型-Direct" class="headerlink" title="4，订阅模型-Direct"></a>4，订阅模型-Direct</h3><p>有选择性的接收消息</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQcuNT"><img src="https://z3.ax1x.com/2021/07/17/WQcuNT.png"></a></p>
-<p>在订阅模式中，生产者发布消息，所有消费者都可以获取所有消息。</p>
-<p>在路由模式中，我们将添加一个功能 - 我们将只能订阅一部分消息。 例如，我们只能将重要的错误消息引导到日志文件（以节省磁盘空间），同时仍然能够在控制台上打印所有日志消息。</p>
-<p>但是，在某些场景下，我们希望不同的消息被不同的队列消费。这时就要用到Direct类型的Exchange。</p>
-<p>在Direct模型下，队列与交换机的绑定，不能是任意绑定了，而是要指定一个RoutingKey（路由key）</p>
-<p>消息的发送方在向Exchange发送消息时，也必须指定消息的routing key。</p>
-<h3 id="5，订阅模型-Topic"><a href="#5，订阅模型-Topic" class="headerlink" title="5，订阅模型-Topic"></a>5，订阅模型-Topic</h3><p>`<a target="_blank" rel="noopener" href="https://imgtu.com/i/WQcnEV"><img src="https://z3.ax1x.com/2021/07/17/WQcnEV.png"></a></p>
-<p>Topic<code>类型的</code>Exchange<code>与</code>Direct<code>相比，都是可以根据</code>RoutingKey<code>把消息路由到不同的队列。只不过</code>Topic<code>类型</code>Exchange<code>可以让队列在绑定</code>Routing key` 的时候使用通配符。</p>
-<p><code>Routingkey</code> 一般都是有一个或多个单词组成，多个单词之间以”.”分割，例如： <code>item.insert</code></p>
-<p> 通配符规则：</p>
-<p>​         <code>#</code>：匹配一个或多个词</p>
-<p>​         <code>*</code>：匹配不多不少恰好1个词</p>
-<p>举例：</p>
-<p>​         <code>audit.#</code>：能够匹配<code>audit.irs.corporate</code> 或者 <code>audit.irs</code></p>
-<p>​         <code>audit.*</code>：只能匹配<code>audit.irs</code></p>
-<h1 id="3，Spring-AMQP"><a href="#3，Spring-AMQP" class="headerlink" title="3，Spring AMQP"></a>3，Spring AMQP</h1><p>Spring有很多不同的项目，其中就有对AMQP的支持：</p>
-<p>Spring AMQP的页面：<a target="_blank" rel="noopener" href="http://spring.io/projects/spring-amqp">http://spring.io/projects/spring-amqp</a></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQ2YtK"><img src="https://z3.ax1x.com/2021/07/17/WQ2YtK.png"></a></p>
-<p>Spring-amqp是对AMQP协议的抽象实现，而spring-rabbit 是对协议的具体实现，也是目前的唯一实现。底层使用的就是RabbitMQ。</p>
-<h4 id="依赖和配置"><a href="#依赖和配置" class="headerlink" title="依赖和配置"></a>依赖和配置</h4><p>添加AMQP的启动器：    </p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-amqp&lt;/artifactId&gt;
-&lt;/dependency&gt;
-</code></pre>
-<p>在<code>application.yml</code>中添加RabbitMQ地址：</p>
-<pre><code>spring:
-  rabbitmq:
-    host: 192.168.*.*
-    username: 
-    password: 
-    virtual-host: /
-</code></pre>
-<h4 id="监听者"><a href="#监听者" class="headerlink" title="监听者"></a>监听者</h4><p>在SpringAMQP中，对消息的消费者进行了封装和抽象，一个普通的JavaBean中的普通方法，只要通过简单的注解，就可以成为一个消费者。</p>
-<pre><code>@Component
-public class Listener &#123;
-
-    @RabbitListener(bindings = @QueueBinding(
-            value = @Queue(value = &quot;spring.test.queue&quot;, durable = &quot;true&quot;),
-            exchange = @Exchange(
-                    value = &quot;spring.test.exchange&quot;,
-                    ignoreDeclarationExceptions = &quot;true&quot;,
-                    type = ExchangeTypes.TOPIC
-            ),
-            key = &#123;&quot;#.#&quot;&#125;))
-    public void listen(String msg)&#123;
-        System.out.println(&quot;接收到消息：&quot; + msg);
-    &#125;
-&#125;
-</code></pre>
+                <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><h5 id="1-什么是机器学习"><a href="#1-什么是机器学习" class="headerlink" title="1.什么是机器学习"></a>1.什么是机器学习</h5><p>​    人类自身的活动大多是基于经验做出的判断。我们通过积累经验，通过对经验的利用，对新情况做出有效的决策。那么计算机能帮忙吗？机器学习正是这样一门学科，它致力于研究如何通过计算的手段，利用经验来改善系统自身的性能。</p>
+<p>​    在计算机系统中，“经验”以数据的形式存在，机器学习即是研究在数据的基础上产生“模型”（model）的算法，也即“学习算法”（learning algorithm）。学习算法基于数据产生模型，在面对新的数据时，模型会做出相应的判断。</p>
+<h5 id="2-机器学习的任务是什么"><a href="#2-机器学习的任务是什么" class="headerlink" title="2.机器学习的任务是什么"></a>2.机器学习的任务是什么</h5><p>​    当今世界，数据越来越多也越来越重要，数据的收集、存储、处理、应用问题也需要我们深入的研究。<br>机器学习的任务即是对数据进行处理：包括但不限于分类、回归预测、聚类、决策。</p>
+<p>​    数据分为离散的和连续的，有标记（label）/特征（feature）的和无标记/特征的。</p>
+<p>​    分类分为二分类和多分类，回归分为线性回归和非线性回归，机器学习分为监督学习、无监督学习和强化学习。</p>
+<h5 id="3-机器学习的发展历程"><a href="#3-机器学习的发展历程" class="headerlink" title="3.机器学习的发展历程"></a>3.机器学习的发展历程</h5><p>​    二十世纪五十年代：初期已有机器学习相关研究，中后期，基于神经网络的“连接主义”（connectionism）学习开始出现。</p>
+<p>​    二十世纪六七十年代：基于逻辑表示的“符号主义”（symbolism）学习技术蓬勃发展。以决策理论为基础的学习技术以及强化学习技术等也得到发展。</p>
+<p>​    二十世纪五十年代到七十年代初：人工智能研究处于推理期，那时人们认为只要赋予机器逻辑推理的能力，机器就能具有智能。</p>
+<p>​    代表性工作：逻辑理论家程序（logic theorist）、通用问题求解程序（general problem solving）。</p>
+<p>​    二十世纪七十年代中期：人工智能研究进入了知识期，人们逐渐意识到要使机器具有智能，就必须设法使机器具有知识。这一时期出现了大量的专家系统。</p>
+<p>​    二十世纪八十年代：是机器学习成为一个独立的学科领域、各种机器学习技术百花初绽的时期。机器学习被    视为“解决知识工程瓶颈问题的关键”而走上人工智能主舞台。</p>
+<p>​    二十世纪九十年代中期：“统计学习”（statistical learning）闪亮登场并迅速占据主流舞台，代表性技术是支持向量机（support vector machine，简称SVM）以及更一般的核方法（kernel methods）。</p>
+<p>​    二十一世纪初：连接主义学习卷土重来，掀起了以“深度学习”为名的热潮。</p>
+<h2 id="二、模型评估"><a href="#二、模型评估" class="headerlink" title="二、模型评估"></a>二、模型评估</h2><h5 id="1-错误率-error-rate"><a href="#1-错误率-error-rate" class="headerlink" title="1.错误率(error rate)"></a>1.错误率(error rate)</h5><p>​    我们把分类错误的样本占样本总数的比例称为“错误率”；与之对应的是精度(accuracy)，即“精度 = 1 - 错误率”。（隐式地假设了均等代价）</p>
+<p>​    更一般的，我们把学习器的实际预测输出与样本的真实输出之间的差异称为误差(error)。</p>
+<h5 id="2-欠拟合-underfitting-与过拟合-overfitting"><a href="#2-欠拟合-underfitting-与过拟合-overfitting" class="headerlink" title="2.欠拟合(underfitting)与过拟合(overfitting)"></a>2.欠拟合(underfitting)与过拟合(overfitting)</h5><p>​    欠拟合意味着学习器对训练样本的一般性质尚未学好，过拟合会导致泛化性能的下降。</p>
+<p>​    欠拟合比较容易克服，过拟合是机器学习面临的关键障碍。但过拟合是无法彻底避免的，我们所能做的只是缓解。</p>
+<p>​    一般来说，偏差过大意味着欠拟合，方差过大对应着过拟合。</p>
+<h5 id="3-模型选择问题-model-selection"><a href="#3-模型选择问题-model-selection" class="headerlink" title="3.模型选择问题(model selection)"></a>3.模型选择问题(model selection)</h5><p>​    理想的解决方案是对候选模型的“泛化误差”进行评估，然后选择泛化误差最小的那个模型。但我们无法直接获得泛化误差，训练误差又因为过拟合现象不适合作为标准。所以我们采用以下的评估方法。</p>
+<p>​    评估方法：将数据分为训练集与测试集，通过测试集(testing set)来测试学习器对新样本的判别能力，然后以测试集上的测试误差近似作为泛化误差，我们通常假设测试样本也是从样本真实分布中独立同分布采样而得。注意测试集应尽量与训练集互斥。</p>
+<h5 id="4-产生训练集与测试集的常见方法："><a href="#4-产生训练集与测试集的常见方法：" class="headerlink" title="4.产生训练集与测试集的常见方法："></a>4.产生训练集与测试集的常见方法：</h5><p>​    留出法：直接将数据集划分为两个互斥的集合（大约2/3~4/5的样本用于训练，剩余样本用于测试），注意需要保持数据分布的一致性，从采样的方面看应采用分层采样。使用留出法时一般要采用若干次随机划分、重复进行实验评估后取平均值作为留出法的评估结果。</p>
+<p>​    交叉验证法：将数据分为大小差不多的k个互斥的集合（分层采样），k-1个用于训练，剩余的用于测试，重复k次。与留出法类似，k折交叉验证法通常要随机使用不同的划分p次，取均值作为评估结果。</p>
+<p>​    自助法：有放回的从含有m个样本的数据集D中采样，每次采样一个，这个过程重复m次，得到新的数据集D’，那么D中不在新数据集中出现的数据大概占0.368。于是我们用D’作为训练集，用D\D’作为测试集。</p>
+<p>​    更一般的，我们按照6:2:2的比例将数据集分为训练集(traing set)，验证集((cross) validation set)，测试集(test set)。</p>
+<p>​    通过训练集训练得到多个模型，通过验证集计算并选择在验证集上的仍误差较小的模型，最后通过测试集计算选中模型的泛化误差。</p>
+<h5 id="5-性能度量-performance-measure"><a href="#5-性能度量-performance-measure" class="headerlink" title="5.性能度量(performance measure)"></a>5.性能度量(performance measure)</h5><p>噪声：标记值与真实值的差的平方的期望。</p>
+<p>偏差：预测输出的期望与与真实标记的差别。</p>
+<p>对算法的期望泛化误差进行分解得：</p>
+<p>E(f;D) = bias^2(x) + var(x) + ε^2</p>
+<p>也就是说，泛化误差可分解为偏差、方差与噪声之和。</p>
+<p><strong>偏差</strong>刻画了学习算法本身的拟合能力</p>
+<p><strong>方差</strong>刻画了数据扰动所造成的影响</p>
+<p><strong>噪声</strong>刻画了问题本身的学习难度</p>
+<h2 id="三、线性模型"><a href="#三、线性模型" class="headerlink" title="三、线性模型"></a>三、<strong>线性模型</strong></h2><p>常用的线性模型有以下几种：</p>
 <ul>
-<li><code>@Componet</code>：类上的注解，注册到Spring容器</li>
-<li><code>@RabbitListener</code>：方法上的注解，声明这个方法是一个消费者方法，需要指定下面的属性：<ul>
-<li><code>bindings</code>：指定绑定关系，可以有多个。值是<code>@QueueBinding</code>的数组。<code>@QueueBinding</code>包含下面属性：<ul>
-<li><code>value</code>：这个消费者关联的队列。值是<code>@Queue</code>，代表一个队列</li>
-<li><code>exchange</code>：队列所绑定的交换机，值是<code>@Exchange</code>类型</li>
-<li><code>key</code>：队列和交换机绑定的<code>RoutingKey</code></li>
+<li>线性回归模型</li>
+<li>logistic 回归模型</li>
+<li>Fisher判别分析</li>
 </ul>
-</li>
+<h4 id="线性回归模型"><a href="#线性回归模型" class="headerlink" title="线性回归模型"></a><strong>线性回归模型</strong></h4><p>​    顾名思义，线性回归模型采用线性方程拟合数据，已到达预测数据的目的，常用在回归任务中。 </p>
+<p>​    线性回归模型的基本形式为：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oAZWjI"><img src="https://z3.ax1x.com/2021/11/25/oAZWjI.png"></a></p>
+<p>​    其中θ 为参数向量，X 为特征变量向量，h表示假设函数，其值为学习器的预测结果。</p>
+<p>​    给定一个数据集，线性回归模型试图学得一个线性模型以尽可能准确地预测实值输出标记。</p>
+<p>​    而学习的过程即是寻找参数θ最优解的过程，所谓最优解即是使得模型尽可能很好的拟合数据又能保持较好的泛化性能的解。</p>
+<p>​    至于如何对模型对拟合程度进行评估，我们可以考虑统计学中的均方误差，定义为：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oAZhut"><img src="https://z3.ax1x.com/2021/11/25/oAZhut.png"></a></p>
+<p>​    均方误差具有非常好的几何意义，因为它对应了常用的欧几里得距离。</p>
+<p>​    我们把基于均方误差最小化来进行模型求解的方法称为“最小二乘法”。而具体实现，则主要有两种方法：</p>
+<ul>
+<li>梯度下降法</li>
+<li>正规方程法</li>
 </ul>
-</li>
-</ul>
-<p>类似Listen这样的方法在一个类中可以写多个，就代表多个消费者。</p>
-<h4 id="AmqpTemplate"><a href="#AmqpTemplate" class="headerlink" title="AmqpTemplate"></a>AmqpTemplate</h4><p>Spring为AMQP提供了统一的消息处理模板：AmqpTemplate，非常方便的发送消息，其发送方法：</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WQRB2F"><img src="https://z3.ax1x.com/2021/07/17/WQRB2F.png"></a></p>
-<p>红框圈起来的是比较常用的3个方法，分别是：</p>
-<ol>
-<li><p>指定交换机、RoutingKey和消息体</p>
-</li>
-<li><p>指定消息</p>
-</li>
-<li><p>指定RoutingKey和消息，会向默认的交换机发送消息</p>
-<p>​</p>
-<p>​</p>
-</li>
-</ol>
+<h5 id="梯度下降法："><a href="#梯度下降法：" class="headerlink" title="梯度下降法："></a>梯度下降法：</h5><p>​    在实践当中，我们往往会构建一个代价函数(cost function)来进行最优参数的求解。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oAZ4DP"><img src="https://z3.ax1x.com/2021/11/25/oAZ4DP.png"></a></p>
+<p>​    可以证明，对于线性回归模型，J(θ)是凸函数，通过梯度下降法，可以求得使得J最小的参数θ的值，也即可以使模型较好拟合数据，“代价”或“损失”较小的优解。</p>
+<h5 id="正规方程法："><a href="#正规方程法：" class="headerlink" title="正规方程法："></a>正规方程法：</h5><p>​    在数据特征不是那么多，数据量不是那么大的时候，梯度下降法因为需要进行多次迭代，会花费较多的时间和资源。</p>
+<p>​    而相比之下，正规方程法，采用矩阵运算，采用有些编程语言可能就是一段代码，速度快且方便。<br>但当数据特征较多时，矩阵运算就会花费较多的时间与资源，远不及梯度下降法，总的来说，在实践当中，梯度下降法具有更好的普适性。</p>
+<p>​    当X^{T}X为满秩阵时，可以经过数学推导得到最优解为：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oAZ5Hf"><img src="https://z3.ax1x.com/2021/11/25/oAZ5Hf.png"></a></p>
+<h4 id="logistic-回归模型"><a href="#logistic-回归模型" class="headerlink" title="logistic 回归模型"></a>logistic 回归模型</h4><p>​    虽然名字里有回归的字样，但logistic 回归模型主要用来完成分类任务，与线性回归模型不同，logistic 回归模型的基本形式是</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oAZoE8"><img src="https://z3.ax1x.com/2021/11/25/oAZoE8.png"></a></p>
+<p>​    这里采用了sigmoid函数，主要目的是这样可以将h看做样本x被判做正例的概率，h&gt;0.5时，判作正例；h &lt; 0.5时，判作反例；h=0.5时，任意判别。也即\Theta ^{T}X &gt; 0时，判作正例；\Theta ^{T}X &lt; 0时，判作反例；\Theta ^{T}X= 0时，任意判别。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oAZ74g"><img src="https://z3.ax1x.com/2021/11/25/oAZ74g.png"></a></p>
+<p>​    这种方法有很多优点，例如它是直接对分类可能性进行建模，无需事先假设数据分布，这样就避免了假设分布不准确所带来的问题；它不仅预测出“类别”，而是可得到近似概率预测。</p>
+<p>​    这对许多利用概率辅助决策的任务很有用；此外，对率函数是任意阶可导的凸函数，有很好的数学性质，现在的许多数值优化算法，都可以直接用于求取最优解。</p>
+<p>​    与线性回归模型对应，logistic 回归模型的代价函数形式为：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oAZTUS"><img src="https://z3.ax1x.com/2021/11/25/oAZTUS.png"></a></p>
+<p>​    同样可以通过梯度下降法，求得参数的最优解。注意到对θ值得更新要同步进行。</p>
+<p>​    得到优解θ后，对于二分类问题，我们可以得到相应的决策边界对新数据进行判定，对于多分类问题，我们可以采用一对多的思路。</p>
+<p>​    每次得到一个边界，指定一类为正类，其他类为反类。</p>
+<h4 id="Fisher判别分析-LDA"><a href="#Fisher判别分析-LDA" class="headerlink" title="Fisher判别分析(LDA)"></a>Fisher判别分析(LDA)</h4><p>​    LDA的原理是，将带上标签的数据（点），通过投影的方法，投影到维度更低的空间中，使得投影后的点，会形成按类别区分，一簇一簇的情况，相同类别的点，将会在投影后的空间中更接近。要说明白LDA，首先得弄明白线性分类器：因为LDA是一种线性分类器。对于K-分类的一个分类问题，会有K个线性函数：</p>
+<p>​    当满足条件：对于所有的j，都有Yk &gt; Yj,的时候，我们就说x属于类别k。对于每一个分类，都有一个公式去算一个分值，在所有的公式得到的分值中，找一个最大的，就是所属的分类了。</p>
+<p>​    上式实际上就是一种投影，是将一个高维的点投影到一条高维的直线上，LDA最求的目标是，给出一个标注了类别的数据集，投影到了一条直线之后，能够使得点尽量的按类别区分开。</p>
+<p>​    投影的原则是：使同类的点尽量靠近，不同类的点尽量远离。</p>
 
                 
             </div>
@@ -606,12 +564,8 @@ public class Listener &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
-                                    <span class="chip bg-color">中间件</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
-                                    <span class="chip bg-color">消息队列</span>
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
                                 </a>
                             
                         </div>
@@ -652,54 +606,48 @@ public class Listener &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/0718undefined.html">
+                <a href="/2021/1125undefined.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="RuoYi管理系统架构分析">
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="学习笔记—《机器学习》">
                         
-                        <span class="card-title">RuoYi管理系统架构分析</span>
+                        <span class="card-title">学习笔记—《机器学习》</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            RuoYi是一个后台管理系统，基于经典技术组合Spring Boot、Apache Shiro、MyBatis
+                            关于机器学习的概述、模型评估与线性模型。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/" class="post-category">
-                                    架构分析
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">架构分析</span>
-                    </a>
-                    
-                    <a href="/tags/Shiro%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6/">
-                        <span class="chip bg-color">Shiro安全控制</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
                     </a>
                     
                 </div>
@@ -713,33 +661,29 @@ public class Listener &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/0715undefined.html">
+                <a href="/2021/1019undefined.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="个人毕设—ERP订单管理系统架构分析">
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="工程管理作业-婚礼策划">
                         
-                        <span class="card-title">个人毕设—ERP订单管理系统架构分析</span>
+                        <span class="card-title">工程管理作业-婚礼策划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            满足中小型企业扩展销售渠道、数据保密与网站高可用的三大需求。
+                            培养我们综合利用管理科学、信息技术和工程方法解决相关管理问题的基本能力。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-19
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/" class="post-category">
-                                    架构分析
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            HAN蓝海
                             
                         </span>
                     </div>
@@ -747,16 +691,8 @@ public class Listener &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">架构分析</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">毕业设计</span>
-                    </a>
-                    
-                    <a href="/tags/SpringCloud/">
-                        <span class="chip bg-color">SpringCloud</span>
+                    <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/">
+                        <span class="chip bg-color">工程管理</span>
                     </a>
                     
                 </div>
