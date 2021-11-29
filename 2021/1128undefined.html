@@ -516,9 +516,24 @@
 <h5 id="Document：文档"><a href="#Document：文档" class="headerlink" title="Document：文档"></a>Document：文档</h5><p>对应数据库中的一条记录。通常以json格式显示。多个document存储于一个索引（Index）中。</p>
 <h5 id="Field：字段"><a href="#Field：字段" class="headerlink" title="Field：字段"></a>Field：字段</h5><p>对应数据库中的列，定义每个document应该有的字段。</p>
 <h5 id="Type：类型"><a href="#Type：类型" class="headerlink" title="Type：类型"></a>Type：类型</h5><p>默认 _doc ，官方在淡化概念。</p>
-<h5 id="shard：分片"><a href="#shard：分片" class="headerlink" title="shard：分片"></a>shard：分片</h5><p>index 数据过大时，将index里面的数据，分为多个shard，分布式的存储在各个服务器上面。可以支持海量数据和高并发，提升性能和吞吐量，充分利用多台机器的cpu。</p>
-<h5 id="replica：副本"><a href="#replica：副本" class="headerlink" title="replica：副本"></a>replica：副本</h5><p>分布式为保证可用性，将每个index的分片经行备份，存储在另外的机器上。能正常提供查询和插入的分片我们叫做主分片（primary shard），其余的叫做备份的分片（replica shard）。</p>
+<h5 id="shard：分片"><a href="#shard：分片" class="headerlink" title="shard：分片"></a>shard：分片</h5><p>index 数据过大时，将index里面的数据，分为多个shard，分布式的存储在各个服务器上面。可以支持海量数据和高并发，提升性能和吞吐量，充分利用多台机器的cpu。分片自动负载均衡，分片向空闲机器转移。</p>
+<h5 id="replica：副本"><a href="#replica：副本" class="headerlink" title="replica：副本"></a>replica：副本</h5><p>分布式为保证可用性，将每个index的分片经行备份，存储在另外的机器上。能正常提供查询和插入的分片我们叫做主分片（primary shard），其余的叫做备份的分片（replica shard）。主分片的数量无法改变，但是副本的数量并不固定，同时，副本能够提供查询功能，这样也变相减少了服务器压力。</p>
 <p>es6默认新建索引时，5分片，2副本，也就是一主一备，共10个分片。所以，es集群最小规模为两台。</p>
+<h5 id="路由算法"><a href="#路由算法" class="headerlink" title="路由算法"></a>路由算法</h5><pre><code>shard = hash(routing) % number_of_primary_shards
+</code></pre>
+<p>哈希算法的一种，对主分片数进行取模来决定数据分到哪个分片。</p>
+<p>也可以自己指定 routing number 控制数据流向，好处是比较灵活，但如果设计的不好会导致数据倾斜。</p>
+<pre><code>PUT /test_index/_doc/15?routing=num
+&#123;
+  &quot;num&quot;: 0,
+  &quot;tags&quot;: []
+&#125;
+</code></pre>
+<h5 id="mapping：映射"><a href="#mapping：映射" class="headerlink" title="mapping：映射"></a>mapping：映射</h5><p>自动或手动为index中的_doc建立的一种数据结构和相关配置，mapping中包含了每个field对应的数据类型，以及如何分词等设置。</p>
+<h5 id="搜索行为"><a href="#搜索行为" class="headerlink" title="搜索行为"></a>搜索行为</h5><p>不同的 data type 的分词、搜索等行为是不一样的。有 exact value 精确匹配与 full text 全文检索两种，前者要求完全一样才能显示，后者对值进行拆分词语后（分词）进行匹配，也可以通过缩写、时态、大小写、同义词等进行匹配。</p>
+<h5 id="analyzer：分词器"><a href="#analyzer：分词器" class="headerlink" title="analyzer：分词器"></a>analyzer：分词器</h5><p>切分词语，normalization（提升recall召回率），将一段文本进行各种处理，最后处理好的结果才会拿去建立倒排索引。有很多类型，可以使用默认的，也可以指定。</p>
+<h5 id="核心数据类型"><a href="#核心数据类型" class="headerlink" title="核心数据类型"></a>核心数据类型</h5><p>string 转成 text or keyword ，full text</p>
+<p>byte，short，integer，long,float，double，boolean 转成 date，exact value</p>
 <h3 id="2-3-安装"><a href="#2-3-安装" class="headerlink" title="2.3 安装"></a>2.3 安装</h3><h5 id="Windows-安装-elasticsearch"><a href="#Windows-安装-elasticsearch" class="headerlink" title="Windows 安装 elasticsearch"></a>Windows 安装 elasticsearch</h5><p>1、安装JDK，至少1.8.0_73以上版本，验证：java -version。</p>
 <p>2、下载和解压缩Elasticsearch安装包，安装后配置文件在 config 目录下的 elasticsearch.yml、jvm.options 和log4j2.properties 内。</p>
 <p>3、启动Elasticsearch：bin\elasticsearch.bat，es的特点就是开箱即，无需配置，启动即可。</p>
@@ -549,7 +564,54 @@
 <h5 id="删除文档"><a href="#删除文档" class="headerlink" title="//删除文档"></a>//删除文档</h5><p>DELETE /book/_doc/1</p>
 <h4 id="3、内置脚本"><a href="#3、内置脚本" class="headerlink" title="3、内置脚本"></a>3、内置脚本</h4><p>es可以内置脚本执行复杂操作，例如查询同时更新。</p>
 <h5 id="修改文档6的-num-字段-1"><a href="#修改文档6的-num-字段-1" class="headerlink" title="//修改文档6的 num 字段+1"></a>//修改文档6的 num 字段+1</h5><p>POST /test_index/_doc/6/_update<br>{<br>   “script” : “ctx._source.num+=1”<br>}</p>
-<h5 id="搜索文档并将-num-字段-2"><a href="#搜索文档并将-num-字段-2" class="headerlink" title="//搜索文档并将 num 字段*2"></a>//搜索文档并将 num 字段*2</h5><p>GET /test_index/_search<br>{<br>  “script_fields”: {<br>    “my_doubled_field”: {<br>      “script”: {<br>       “lang”: “expression”,<br>        “source”: “doc[‘num’] * multiplier”,<br>        “params”: {<br>          “multiplier”: 2<br>}}}}}</p>
+<h5 id="搜索文档并将-num-字段-2"><a href="#搜索文档并将-num-字段-2" class="headerlink" title="//搜索文档并将 num 字段*2"></a>//搜索文档并将 num 字段*2</h5><pre><code>GET /test_index/_search
+
+&#123;
+  &quot;script_fields&quot;: &#123;
+    &quot;my_doubled_field&quot;: &#123;
+      &quot;script&quot;: &#123;
+       &quot;lang&quot;: &quot;expression&quot;,
+        &quot;source&quot;: &quot;doc[&#39;num&#39;] * multiplier&quot;,
+        &quot;params&quot;: &#123;
+          &quot;multiplier&quot;: 2
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h4 id="4、手动管理mapping"><a href="#4、手动管理mapping" class="headerlink" title="4、手动管理mapping"></a>4、手动管理mapping</h4><h5 id="查询索引的映射"><a href="#查询索引的映射" class="headerlink" title="//查询索引的映射"></a>//查询索引的映射</h5><p>语法：PUT book/_mapping</p>
+<h5 id="创建映射"><a href="#创建映射" class="headerlink" title="//创建映射"></a>//创建映射</h5><pre><code>PUT book/_mapping
+&#123;
+    &quot;properties&quot;: &#123;
+           &quot;name&quot;: &#123;
+                  &quot;type&quot;: &quot;text&quot;
+            &#125;,
+           &quot;pic&quot;:&#123;
+             &quot;type&quot;:&quot;text&quot;,
+             &quot;index&quot;:false
+           &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>通过analyzer属性指定分词器。keyword关键字字段不进行分词，日期类型也不用设置分词器，数值类型尽量选择范围小的类型，提高搜索效率。</p>
+<p>index属性指定是否索引，像是图片的 index 就设置为 false。</p>
+<h5 id="删除映射"><a href="#删除映射" class="headerlink" title="//删除映射"></a>//删除映射</h5><p>删除索引就行。</p>
+<h5 id="修改映射"><a href="#修改映射" class="headerlink" title="//修改映射"></a>//修改映射</h5><p>无法修改，只能通过删除索引重新创建映射来进行操作。</p>
+<h4 id="5、复杂数据类型"><a href="#5、复杂数据类型" class="headerlink" title="5、复杂数据类型"></a>5、复杂数据类型</h4><h5 id="多重字段"><a href="#多重字段" class="headerlink" title="//多重字段"></a>//多重字段</h5><p>{ “tags”: [ “tag1”, “tag2” ]}</p>
+<h5 id="空字段"><a href="#空字段" class="headerlink" title="//空字段"></a>//空字段</h5><p>null，[]，[null]</p>
+<h5 id="对象字段"><a href="#对象字段" class="headerlink" title="//对象字段"></a>//对象字段</h5><pre><code>PUT /company/_doc/1
+&#123;
+  &quot;address&quot;: &#123;
+    &quot;country&quot;: &quot;china&quot;,
+    &quot;province&quot;: &quot;guangdong&quot;,
+    &quot;city&quot;: &quot;guangzhou&quot;
+  &#125;,
+  &quot;name&quot;: &quot;jack&quot;,
+  &quot;age&quot;: 27,
+  &quot;join_date&quot;: &quot;2019-01-01&quot;
+&#125;
+</code></pre>
 
                 
             </div>
