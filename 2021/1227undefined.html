@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: 工程管理, 蓝海Blog">
+    <meta name="keywords" content="《思凡》, 蓝海Blog">
     <meta name="description" content="个人技术博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签: 工程管理 | 蓝海Blog</title>
+    <title>《思凡》 | 蓝海Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/awesome/css/all.css">
@@ -304,237 +304,479 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                蓝海个人博客
-                
-            </div>
+    
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['深沉内省，百折不挠。','深沉内省，百折不挠。'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">《思凡》</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/banner/4.jpg)');
-</script>
 
 
-    </div>
-</div>
-
-<main class="content">
+<main class="post-container content">
 
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
 
-<div id="tags" class="container chip-container">
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
     <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                                <span class="chip bg-color">随笔</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                随笔
+                            </a>
+                        
+                    </div>
+                    
+                </div>
             </div>
-            <div class="tag-chips">
+
+            <div class="post-info">
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-12-27
+                </div>
                 
-                <a href="/tags/%E9%9A%8F%E7%AC%94/" title="随笔: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="随笔" style="background-color: #F9EBEA;">随笔
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
+
                 
+
                 
-                <a href="/tags/%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/" title="架构分析: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="架构分析" style="background-color: #F5EEF8;">架构分析
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
+
                 
-                
-                <a href="/tags/SpringBoot/" title="SpringBoot: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="SpringBoot" style="background-color: #D5F5E3;">SpringBoot
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Shiro%E5%AE%89%E5%85%A8%E6%8E%A7%E5%88%B6/" title="Shiro安全控制: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Shiro安全控制" style="background-color: #E8F8F5;">Shiro安全控制
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" title="毕业设计: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="毕业设计" style="background-color: #FEF9E7;">毕业设计
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/SpringCloud/" title="SpringCloud: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="SpringCloud" style="background-color: #F8F9F9;">SpringCloud
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="中间件: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="中间件" style="background-color: #82E0AA;">中间件
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="消息队列: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="消息队列" style="background-color: #D7BDE2;">消息队列
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="源码分析: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="源码分析" style="background-color: #A3E4D7;">源码分析
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/ElasticStack/" title="ElasticStack: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="ElasticStack" style="background-color: #85C1E9;">ElasticStack
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法: 5">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="数据结构与算法" style="background-color: #F8C471;">数据结构与算法
-                        <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="机器学习: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="机器学习" style="background-color: #F9E79F;">机器学习
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86/" title="工程管理: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="工程管理" style="background-color: #D5F5E3;">工程管理
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E6%88%90%E6%9E%9C%E5%B1%95%E7%A4%BA/" title="成果展示: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="成果展示" style="background-color: #85C1E9;">成果展示
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="学习笔记: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="学习笔记" style="background-color: #A3E4D7;">学习笔记
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
+
                 
             </div>
         </div>
-    </div>
-</div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="十二月下了一场大雪，天仙碧玉琼瑶"><a href="#十二月下了一场大雪，天仙碧玉琼瑶" class="headerlink" title="十二月下了一场大雪，天仙碧玉琼瑶"></a>十二月下了一场大雪，天仙碧玉琼瑶</h3><p>在湖南这雪并不常见，纷纷扬扬地，飘荡了一天一夜。</p>
+<p>是天空往下垂了无数倾斜的线，</p>
+<p>远处淡灰的湖，脚下白茫茫的草，</p>
+<p>吹到脸上干冷的风，簇簇作响的树梢。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TBKnsK"><img src="https://s4.ax1x.com/2021/12/27/TBKnsK.md.jpg"></a></p>
+<h3 id="这场雪隔了三年，刚好见证了我大学的日子"><a href="#这场雪隔了三年，刚好见证了我大学的日子" class="headerlink" title="这场雪隔了三年，刚好见证了我大学的日子"></a>这场雪隔了三年，刚好见证了我大学的日子</h3><p>只是上一场是入学，这一场是送别。</p>
+<p>点点扬花，片片鹅毛。</p>
+<p>是书签，是标点，仿佛把我这些旧时光，</p>
+<p>开心的，幸福的，温暖的，积极的，</p>
+<p>做错的，遗憾的，背叛的，记恨的，</p>
+<p>伴着零零散散的缘分，在寒风中吹的烟消云散了。</p>
+<h3 id="爱人是那场大雨，是每逢大事必定降临的奇迹"><a href="#爱人是那场大雨，是每逢大事必定降临的奇迹" class="headerlink" title="爱人是那场大雨，是每逢大事必定降临的奇迹"></a>爱人是那场大雨，是每逢大事必定降临的奇迹</h3><p>像是一场梦，或是我体验的一瞬间，</p>
+<p>但我希望你所存在的时空能够多停留一段时间。</p>
+<p>我啊，就像个小丑，一直在抛着四个球，</p>
+<p>职业，家庭，健康，灵魂。</p>
+<p>我看到繁华似锦，</p>
+<p>真情也像白纸一样廉价，</p>
+<p>想要触碰，却又睁开眼。</p>
+<h3 id="世人皆苦，仿佛把最美好的东西撕碎给你看"><a href="#世人皆苦，仿佛把最美好的东西撕碎给你看" class="headerlink" title="世人皆苦，仿佛把最美好的东西撕碎给你看"></a>世人皆苦，仿佛把最美好的东西撕碎给你看</h3><p>这是个流行暧昧的年代，</p>
+<p>大多数人没有爱情，</p>
+<p>要么是交换，要么是索取，或者</p>
+<p>爱被爱时的虚荣，</p>
+<p>爱备受折磨时的存在感，</p>
+<p>甚至爱上不被爱时的自卑。</p>
+<p>爱到最后，爱的是自己生出的情绪，</p>
+<p>却与爱情本身无关了。</p>
+<h3 id="稀里糊涂的爱着喜欢着，到头来，却有一种大梦初醒的感觉"><a href="#稀里糊涂的爱着喜欢着，到头来，却有一种大梦初醒的感觉" class="headerlink" title="稀里糊涂的爱着喜欢着，到头来，却有一种大梦初醒的感觉"></a>稀里糊涂的爱着喜欢着，到头来，却有一种大梦初醒的感觉</h3><p>原来，</p>
+<p>每个人都有属于自己的一片森林，</p>
+<p>也许我们从来不曾走过，</p>
+<p>但它一直在那儿，总会在那里，</p>
+<p>迷失的人迷失了，相逢的人会再相逢。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                                    <span class="chip bg-color">随笔</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/share/css/share.min.css">
+<div id="article-share">
 
     
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="工程管理" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2021/1019undefined.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="工程管理作业-婚礼策划">
-                            
-                            <span class="card-title">工程管理作业-婚礼策划</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/" class="post-category">
-                                课程作业
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
+    
+
+</div>
+
                 </div>
             </div>
             
         </div>
-    </article>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/1227undefined.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="《思凡》">
+                        
+                        <span class="card-title">《思凡》</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            十二月下了一场大雪，天仙碧玉琼瑶。这场雪隔了三年，刚好见证了我大学的日子
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    随笔
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/1128undefined.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="学习笔记—ElasticStack高级搜索">
+                        
+                        <span class="card-title">学习笔记—ElasticStack高级搜索</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ElasticStack 是包含但不限于数据抽取、搜索分析、数据展现的一整套解决方案。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ElasticStack/">
+                        <span class="chip bg-color">ElasticStack</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
 </main>
 
 
