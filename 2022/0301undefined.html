@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Nacos 服务发现与配置管理, 蓝海Blog">
+    <meta name="keywords" content="Nacos服务发现与配置管理, 蓝海Blog">
     <meta name="description" content="个人技术博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Nacos 服务发现与配置管理 | 蓝海Blog</title>
+    <title>Nacos服务发现与配置管理 | 蓝海Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Nacos 服务发现与配置管理</h1>
+                    <h1 class="description center-align post-title">Nacos服务发现与配置管理</h1>
                 </div>
             </div>
         </div>
@@ -475,12 +475,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-Nacos-特性"><a href="#1-Nacos-特性" class="headerlink" title="1. Nacos 特性"></a>1. Nacos 特性</h1><p>Nacos主要提供以下四大功能：</p>
+                <h1 id="1-Nacos-特性"><a href="#1-Nacos-特性" class="headerlink" title="1. Nacos 特性"></a>1. Nacos 特性</h1><p>Nacos主要提供以下功能：</p>
 <h4 id="服务发现与服务健康检查"><a href="#服务发现与服务健康检查" class="headerlink" title="服务发现与服务健康检查"></a><strong>服务发现与服务健康检查</strong></h4><p>Nacos使服务更容易注册，并通过DNS或HTTP接口发现其他服务，Nacos还提供服务的实时健康检查，以防止向不健康的主机或服务实例发送请求。</p>
 <h4 id="动态配置管理"><a href="#动态配置管理" class="headerlink" title="动态配置管理"></a><strong>动态配置管理</strong></h4><p>动态配置服务允许您在所有环境中以集中和动态的方式管理所有服务的配置。Nacos消除了在更新配置时重新部署应用程序，这使配置的更改更加高效和灵活。</p>
 <h4 id="动态DNS服务"><a href="#动态DNS服务" class="headerlink" title="动态DNS服务"></a><strong>动态DNS服务</strong></h4><p>Nacos提供基于DNS协议的服务发现能力，旨在支持异构语言的服务发现，支持将注册在Nacos上的服务以域名的方式暴露端点，让三方应用方便的查阅及发现。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/qehXr9"><img src="https://s1.ax1x.com/2022/03/20/qehXr9.md.jpg" alt="qehXr9.md.jpg"></a></p>
-<p>Nacos作为服务发现中心，具备更多的功能支持项，且从长远来看Nacos在以后的版本会支持SpringCLoud Kubernetes的组合。两套体系下可以采用同一套服务发现和配置管理的解决方案，这将大大的简化使用和维护的成本。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/qehXr9"><img src="https://s1.ax1x.com/2022/03/20/qehXr9.md.jpg"></a></p>
+<p>Nacos作为服务发现中心，具备更多的功能支持项，且从长远来看Nacos在以后的版本会支持CLoud +Kubernetes的组合。两套体系下可以采用同一套服务发现和配置管理的解决方案，这将大大的简化使用和维护的成本。</p>
 <h1 id="2-Nacos-配置管理"><a href="#2-Nacos-配置管理" class="headerlink" title="2. Nacos 配置管理"></a>2. Nacos 配置管理</h1><h3 id="2-1-微服务架构配置管理流程"><a href="#2-1-微服务架构配置管理流程" class="headerlink" title="2.1 微服务架构配置管理流程"></a><strong>2.1 微服务架构配置管理流程</strong></h3><p>配置中心的服务流程如下：</p>
 <p>1、用户在配置中心更新配置信息。</p>
 <p>2、服务A和服务B及时得到配置更新通知，从配置中心获取配置。</p>
@@ -595,7 +595,7 @@ cloud:
       namespace: a1f8e863‐3117‐48c4‐9dd3‐e9ddc2af90a8 # 开发环境
       cluster‐name: DEFAULT # 默认集群，可不填写
 </code></pre>
-<h2 id="3-4-服务功能"><a href="#3-4-服务功能" class="headerlink" title="3.4 服务功能"></a>3.4 <strong>服务功能</strong></h2><p>Nacos 在目前最新版本开放的控制台的服务发现部分，主要就是提供用户一个基本的运维页面，能够查看、编辑当前注册的服务，这些功能集中在Nacos 控制台的服务管理一级菜单内。</p>
+<h2 id="3-4-控制台功能"><a href="#3-4-控制台功能" class="headerlink" title="3.4 控制台功能"></a>3.4 <strong>控制台功能</strong></h2><p>Nacos 在目前最新版本开放的控制台的服务发现部分，主要就是提供用户一个基本的运维页面，能够查看、编辑当前注册的服务，这些功能集中在Nacos 控制台的服务管理一级菜单内。</p>
 <h4 id="服务列表管理"><a href="#服务列表管理" class="headerlink" title="服务列表管理"></a><strong>服务列表管理</strong></h4><p>服务列表帮助用户以统一的视图管理其所有的微服务以及服务健康状态。</p>
 <h4 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a><strong>流量控制</strong></h4><p>Nacos 为用户提供了流量权重控制的能力，同时开放了服务流量的阈值保护，以帮助用户更好的保护服务服务提 供者集群不被意外打垮。</p>
 <h4 id="服务元数据"><a href="#服务元数据" class="headerlink" title="服务元数据"></a><strong>服务元数据</strong></h4><p>Nacos 提供多个维度的服务元数据的暴露，帮助用户存储自定义的信息。这些信息都是以K-V的数据结构存储，在 控制台上，会以k1=v1,k2=v2这样的格式展示。</p>
@@ -665,15 +665,15 @@ cloud:
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="Nacos 服务发现与配置管理">
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="Nacos服务发现与配置管理">
                         
-                        <span class="card-title">Nacos 服务发现与配置管理</span>
+                        <span class="card-title">Nacos服务发现与配置管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Nacos是阿里的一个开源产品，它是针对微服务架构中的服务发现、配置管理、服务治理的综合型解决方案。
+                            Nacos是阿里针对微服务架构中的服务发现、配置管理、服务治理的综合型解决方案。
                         
                     </div>
                     <div class="publish-info">
