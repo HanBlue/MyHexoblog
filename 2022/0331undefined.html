@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="蓝海Blog">
+    <meta name="keywords" content="Neo4j图形数据库, 蓝海Blog">
     <meta name="description" content="个人技术博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>蓝海Blog</title>
+    <title>Neo4j图形数据库 | 蓝海Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">Neo4j图形数据库</h1>
                 </div>
             </div>
         </div>
@@ -427,12 +427,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -441,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-01
+                    2022-03-31
                 </div>
                 
 
@@ -462,13 +475,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>title: Neo4j图形数据库
-date: 2022-3-1 20:35:17
-tags: 数据库
-summary: Neo4j是一个开源的NoSQL图形数据库，是世界上最先进的图数据库之一，提供原生的图数据存储，检索和处理；
-categories: 学习笔记
-</code></pre>
-<h1 id="图形数据库简介"><a href="#图形数据库简介" class="headerlink" title="图形数据库简介"></a>图形数据库简介</h1><p>图数据库是基于图论实现的一种NoSQL数据库，其数据存储结构和数据查询方式都是以图论为基础的，主要用于存储更多的连接数据。</p>
+                <h1 id="图形数据库简介"><a href="#图形数据库简介" class="headerlink" title="图形数据库简介"></a>图形数据库简介</h1><p>图数据库是基于图论实现的一种NoSQL数据库，其数据存储结构和数据查询方式都是以图论为基础的，主要用于存储更多的连接数据。</p>
 <p><a target="_blank" rel="noopener" href="https://imgtu.com/i/qhDdOA"><img src="https://s1.ax1x.com/2022/04/01/qhDdOA.jpg"></a></p>
 <p>世界上很多著名的公司都在使用图数据库，比如：</p>
 <p><strong>社交领域</strong> ：Facebook, Twitter，Linkedin 用它来管理社交关系，</p>
@@ -541,7 +548,7 @@ categories: 学习笔记
     </thread>    
 </table>
 
-<h2 id="3-Neo4j数据库"><a href="#3-Neo4j数据库" class="headerlink" title="3. Neo4j数据库"></a><strong>3. Neo4j数据库</strong></h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/qhwtzj"><img src="https://s1.ax1x.com/2022/04/01/qhwtzj.md.jpg" alt="qhwtzj.md.jpg"></a></p>
+<h2 id="3-Neo4j数据库"><a href="#3-Neo4j数据库" class="headerlink" title="3. Neo4j数据库"></a><strong>3. Neo4j数据库</strong></h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/qhwtzj"><img src="https://s1.ax1x.com/2022/04/01/qhwtzj.md.jpg"></a></p>
 <p>Neo4j是一个开源的NoSQL图形数据库，是世界上最先进的图数据库之一，提供原生的图数据存储，检索和处理；</p>
 <p>采用属性图模型（Property graph model），极大的完善和丰富图数据模型；</p>
 <p>专属查询语言 Cypher，直观，高效；</p>
@@ -696,10 +703,6 @@ drop constraint on (n:xiyou) assert n.name is unique
 <h2 id="4-常用CQL函数"><a href="#4-常用CQL函数" class="headerlink" title="4. 常用CQL函数"></a><strong>4. 常用CQL函数</strong></h2><h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a><strong>字符串函数</strong></h3><p>Neo4J CQL提供了一组String函数，用于在CQL查询中获取所需的结果。</p>
 <table>
     <thread>
-        <tr>
-            <td> </td>
-            <td> </td>
-        </tr>
         <tr>
             <td>UPPER</td>
             <td>用于将所有字母更改为大写字母</td>
@@ -919,7 +922,11 @@ spring.data.neo4j.password=12345
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -963,34 +970,46 @@ spring.data.neo4j.password=12345
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/0401undefined.html">
+                <a href="/2022/0331undefined.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="Neo4j图形数据库">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Neo4j图形数据库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Neo4j是一个开源的NoSQL图形数据库，提供原生的图数据存储，检索和处理；
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-31
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            HAN蓝海
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
