@@ -1,0 +1,1438 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="蓝海Blog">
+    <meta name="description" content="个人技术博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>蓝海Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loaderҳ����ʧ���ý����ķ�ʽ*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo���ֶ��� */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//ʹ�ý����ķ�������loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },2500); 
+        },1000);//ǿ����ʾloading page 1s  
+    };
+    loaded();
+})()
+</script>
+
+  
+<body>
+ 
+        <div id="loading-container">
+             <p class="loading-text">加载中，请稍后</p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                   <div>
+				   
+                    <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">蓝海Blog</span>
+					</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">蓝海Blog</div>
+        <div class="logo-desc">
+            
+            个人技术博客
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-04-01
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <pre><code>title: Neo4j图形数据库
+date: 2022-3-1 20:35:17
+tags: 数据库
+summary: Neo4j是一个开源的NoSQL图形数据库，是世界上最先进的图数据库之一，提供原生的图数据存储，检索和处理；
+categories: 学习笔记
+</code></pre>
+<h1 id="图形数据库简介"><a href="#图形数据库简介" class="headerlink" title="图形数据库简介"></a>图形数据库简介</h1><p>图数据库是基于图论实现的一种NoSQL数据库，其数据存储结构和数据查询方式都是以图论为基础的，主要用于存储更多的连接数据。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/qhDdOA"><img src="https://s1.ax1x.com/2022/04/01/qhDdOA.jpg"></a></p>
+<p>世界上很多著名的公司都在使用图数据库，比如：</p>
+<p><strong>社交领域</strong> ：Facebook, Twitter，Linkedin 用它来管理社交关系，</p>
+<p><strong>实现好友推荐零售领域 ：</strong>eBay，沃尔玛使用它实现商品实时推荐，给买家更好的购物体验</p>
+<p><strong>金融领域 ：</strong>摩根大通，花旗和瑞银等银行在用图数据库做风控处理</p>
+<p><strong>汽车制造领域 ：</strong>沃尔沃，戴姆勒和丰田等顶级汽车制造商依靠图数据库推动创新制造解决方案</p>
+<p><strong>电信领域 ：</strong>Verizon, Orange和AT&amp;T 等电信公司依靠图数据库来管理网络，控制访问并支持客户360</p>
+<p><strong>酒店领域 ：</strong>万豪和雅高酒店等顶级酒店公司依使用图数据库来管理复杂且快速变化的库存</p>
+<h2 id="1-关系查询性能对比"><a href="#1-关系查询性能对比" class="headerlink" title="1. 关系查询性能对比"></a><strong>1. 关系查询性能对比</strong></h2><p>在数据关系中心，图形数据库在查询速度方面非常高效，即使对于深度和复杂的查询也是如此。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/qh0Sk8"><img src="https://s1.ax1x.com/2022/04/01/qh0Sk8.jpg"></a></p>
+<p>在一个社交网络里找到最大深度为5的朋友的朋友，他们的数据集包括100万人，每人约有50个朋友。</p>
+<p>实验结果如下：</p>
+<table>
+    <thread>
+        <tr>
+            <td>深度</td>
+            <td>MySQL执行时间(s)</td>
+            <td>Neo4J执行时间(s)</td>
+            <td>返回记录数</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>0.016</td>
+            <td>0.01</td>
+            <td>～2500</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>30.267</td>
+            <td>0.168</td>
+            <td>～110000</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>1543.505</td>
+            <td>1.359</td>
+            <td>～600000</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>未完成</td>
+            <td>2.132</td>
+            <td>～800000</td>
+        </tr>
+    </thread>    
+</table>
+
+<h2 id="2-对比关系型数据库"><a href="#2-对比关系型数据库" class="headerlink" title="2. 对比关系型数据库"></a><strong>2. 对比关系型数据库</strong></h2><table>
+    <thread>
+        <tr>
+            <td>关系型数据库（RDBMS）</td>
+            <td>图数据库</td>
+        </tr>
+        <tr>
+            <td>表</td>
+            <td>图</td>
+        </tr>
+        <tr>
+            <td>行</td>
+            <td>节点</td>
+        </tr>
+        <tr>
+            <td>列和数据</td>
+            <td>属性和数据</td>
+        </tr>
+        <tr>
+            <td>约束</td>
+            <td>关系</td>
+        </tr>
+    </thread>    
+</table>
+
+<h2 id="3-Neo4j数据库"><a href="#3-Neo4j数据库" class="headerlink" title="3. Neo4j数据库"></a><strong>3. Neo4j数据库</strong></h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/qhwtzj"><img src="https://s1.ax1x.com/2022/04/01/qhwtzj.md.jpg" alt="qhwtzj.md.jpg"></a></p>
+<p>Neo4j是一个开源的NoSQL图形数据库，是世界上最先进的图数据库之一，提供原生的图数据存储，检索和处理；</p>
+<p>采用属性图模型（Property graph model），极大的完善和丰富图数据模型；</p>
+<p>专属查询语言 Cypher，直观，高效；</p>
+<p>官网： <a target="_blank" rel="noopener" href="https://neo4j.com/">https://neo4j.com/</a></p>
+<h1 id="Neo4j数据库快速入门"><a href="#Neo4j数据库快速入门" class="headerlink" title="Neo4j数据库快速入门"></a>Neo4j数据库快速入门</h1><h2 id="1-数据模型"><a href="#1-数据模型" class="headerlink" title="1. 数据模型"></a><strong>1. 数据模型</strong></h2><p>图数据库数据模型的主要构建块是：</p>
+<p><strong>节点(Node)</strong></p>
+<p>基本元素，用来表示一个实体记录，就像关系数据库中的一条记录一样。</p>
+<p><strong>关系(Property)</strong></p>
+<p>用于描述图节点和关系的键值对。</p>
+<p><strong>属性(Relationship)</strong></p>
+<p>关系就是用来连接两个节点，其始端和末端都必须是节点，关系不能指向空也不能从空发起。</p>
+<p><strong>标签(Label)</strong></p>
+<p>将一个公共名称与一组节点或关系相关联，节点或关系可以包含一个或多个标签。</p>
+<h2 id="2-安装使用"><a href="#2-安装使用" class="headerlink" title="2. 安装使用"></a><strong>2. 安装使用</strong></h2><h3 id="安装Neo4j-Community-Server"><a href="#安装Neo4j-Community-Server" class="headerlink" title="安装Neo4j Community Server"></a>安装Neo4j Community Server</h3><p>下载地址：<a target="_blank" rel="noopener" href="https://neo4j.com/download-center/">https://neo4j.com/download-center/</a></p>
+<p>注意： neo4j最新版对应的java版本是jdk11，<br>jdk8可以下载Neo4j CommunityEdition 3.5.28</p>
+<p>解压到新目录（注意：目录名称不要有中文）</p>
+<p>进入到bin目录，执行</p>
+<pre class=" language-sql"><code class="language-sql">neo4j console
+</code></pre>
+<p>在浏览器中访问 <a target="_blank" rel="noopener" href="http://localhost:7474/">http://localhost:7474</a></p>
+<p>使用用户名neo4j和默认密码neo4j进行连接，然后会提示更改密码。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/qhwxTf"><img src="https://s1.ax1x.com/2022/04/01/qhwxTf.jpg"></a></p>
+<h2 id="3-常用CQL命令"><a href="#3-常用CQL命令" class="headerlink" title="3. 常用CQL命令"></a><strong>3. 常用CQL命令</strong></h2><p>Neo4j的Cypher语言是为处理图形数据而构建的，CQL代表Cypher查询语言。<br>像Oracle数据库具有查询语言SQL，Neo4j具有CQL作为查询语言。</p>
+<table>
+    <thread>
+        <tr>
+            <td>CREATE</td>
+            <td>创建节点，关系和属性</td>
+        </tr>
+        <tr>
+            <td>MATCH</td>
+            <td>检索有关节点，关系和属性数据</td>
+        </tr>
+        <tr>
+            <td>RETURN</td>
+            <td>返回查询结果</td>
+        </tr>
+        <tr>
+            <td>WHERE</td>
+            <td>提供条件过滤检索数据/td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>删除节点和关系</td>
+        </tr>
+        <tr>
+            <td>REMOVE</td>
+            <td>删除节点和关系的属性</td>
+        </tr>
+        <tr>
+            <td>ORDER BY</td>
+            <td>排序检索数据</td>
+        </tr>
+        <tr>
+            <td>SET</td>
+            <td>添加或更新标签</td>
+        </tr>
+    </thread>    
+</table>
+
+<h3 id="LOAD-CSV"><a href="#LOAD-CSV" class="headerlink" title="LOAD CSV"></a><strong>LOAD CSV</strong></h3><p>导入csv到neo4j</p>
+<pre class=" language-SQL"><code class="language-SQL">#将csv拷贝到 %NEO4J_HOME%\import目录
+load csv from 'file:///西游记.csv' as line
+create (:西游 &#123;name:line[0],tail:line[1],label:line[3]&#125;)
+</code></pre>
+<h3 id="CREATE创建"><a href="#CREATE创建" class="headerlink" title="CREATE创建"></a><strong>CREATE创建</strong></h3><p>创建节点</p>
+<pre class=" language-SQL"><code class="language-SQL">#创建简单节点
+create (n)
+#创建多个节点
+create (n),(m)
+#创建带标签和属性的节点并返回节点
+create (n:person &#123;name:'如来'&#125;) return n
+</code></pre>
+<p>创建关系</p>
+<pre class=" language-SQL"><code class="language-SQL">#使用新节点创建关系
+CREATE (n:person &#123;name:'杨戬'&#125;)-[r:师傅]->(m:person &#123;name:'玉鼎真人'&#125;) return
+type(r)
+
+#使用已知节点创建带属性的关系
+match (n:person &#123;name:'沙僧'&#125;),(m:person&#123;name:'唐僧'&#125;)
+create (n)-[r:`师傅`&#123;relation:'师傅'&#125;]->(m) return r
+
+#检索关系节点的详细信息
+match (n:person)-[r]-(m:person) return n,m
+</code></pre>
+<p>创建全路径</p>
+<pre class=" language-SQL"><code class="language-SQL">create p=(:person&#123;name:'蛟魔王'&#125;)-[:义兄]->(:person&#123;name:'牛魔王'&#125;)<-[:义兄]-
+(:person &#123;name:'鹏魔王'&#125;) return p
+</code></pre>
+<h3 id="MATCH查询"><a href="#MATCH查询" class="headerlink" title="MATCH查询"></a><strong>MATCH查询</strong></h3><p>用于从数据库获取有关节点和属性的数据或从数据库获取有关节点，关系和属性的数据</p>
+<pre class=" language-SQL"><code class="language-SQL">MATCH (n:`西游`) RETURN n LIMIT 25
+</code></pre>
+<h3 id="RETURN返回"><a href="#RETURN返回" class="headerlink" title="RETURN返回"></a><strong>RETURN返回</strong></h3><p>用于返回检索节点的特定属性</p>
+<pre class=" language-SQL"><code class="language-SQL">MATCH (n:`西游`) RETURN id(n),n.name,n.tail,n.relation
+</code></pre>
+<h3 id="WHERE子句"><a href="#WHERE子句" class="headerlink" title="WHERE子句"></a><strong>WHERE子句</strong></h3><p>过滤MATCH查询的结果</p>
+<pre class=" language-SQL"><code class="language-SQL">MATCH (n:person) where n.name='孙悟空' or n.name='猪八戒' RETURN n
+#创建关系
+match (n:person),(m:person) where n.name='孙悟空' and m.name='猪八戒'
+create (n)-[r:师弟]->(m) return n.name,type(r),m.name
+</code></pre>
+<h3 id="DELETE删除"><a href="#DELETE删除" class="headerlink" title="DELETE删除"></a><strong>DELETE删除</strong></h3><p>删除节点及关系</p>
+<pre class=" language-SQL"><code class="language-SQL"># 删除节点 （前提：节点不存在关系）
+MATCH (n:person&#123;name:"白龙马"&#125;) delete n
+# 删除关系
+MATCH (n:person&#123;name:"沙僧"&#125;)<-[r]-(m) delete r return type(r)
+</code></pre>
+<h3 id="REMOVE删除"><a href="#REMOVE删除" class="headerlink" title="REMOVE删除"></a><strong>REMOVE删除</strong></h3><p>删除节点或关系的现有属性</p>
+<pre class=" language-SQL"><code class="language-SQL">#删除属性
+MATCH (n:role &#123;name:"fox"&#125;) remove n.age return n
+#创建节点
+CREATE (m:role:person &#123;name:"fox666"&#125;)
+#删除标签
+match (m:role:person &#123;name:"fox666"&#125;) remove m:person return m
+</code></pre>
+<h3 id="SET子句"><a href="#SET子句" class="headerlink" title="SET子句"></a><strong>SET子句</strong></h3><p>向现有节点或关系添加新属性</p>
+<pre class=" language-SQL"><code class="language-SQL">MATCH (n:role &#123;name:"fox"&#125;) set n.age=32 return n
+</code></pre>
+<h3 id="ORDER-BY排序"><a href="#ORDER-BY排序" class="headerlink" title="ORDER BY排序"></a><strong>ORDER BY排序</strong></h3><p>对MATCH查询返回的结果进行排序，默认情况下，它按升序对行进行排序。</p>
+<pre class=" language-SQL"><code class="language-SQL">MATCH (n:`西游`) RETURN id(n),n.name order by id(n) desc
+</code></pre>
+<h3 id="UNION子句"><a href="#UNION子句" class="headerlink" title="UNION子句"></a><strong>UNION子句</strong></h3><p>将两个不同的结果合并或者合并更多结果</p>
+<pre class=" language-SQL"><code class="language-SQL">MATCH (n:role) RETURN n.name as name
+UNION
+MATCH (m:person) RETURN m.name as name
+MATCH (n:role) RETURN n.name as name
+UNION all
+MATCH (m:person) RETURN m.name as name
+</code></pre>
+<h3 id="NULL值"><a href="#NULL值" class="headerlink" title="NULL值"></a><strong>NULL值</strong></h3><p>将空值视为对节点或关系的属性的缺失值或未定义值</p>
+<pre class=" language-SQL"><code class="language-SQL">match (n:`西游`) where n.label is null return id(n),n.name,n.tail,n.label
+</code></pre>
+<h3 id="IN操作符"><a href="#IN操作符" class="headerlink" title="IN操作符"></a><strong>IN操作符</strong></h3><p>为CQL命令提供值的集合</p>
+<pre class=" language-SQL"><code class="language-SQL">match (n:`西游`) where n.name in['孙悟空','唐僧'] return
+id(n),n.name,n.tail,n.label
+</code></pre>
+<h3 id="INDEX索引"><a href="#INDEX索引" class="headerlink" title="INDEX索引"></a><strong>INDEX索引</strong></h3><p>为节点建立索引以提高查询性能</p>
+<pre class=" language-SQL"><code class="language-SQL"># 创建索引
+create index on :`西游` (name)
+# 删除索引
+drop index on :`西游` (name)
+</code></pre>
+<h3 id="UNIQUE约束"><a href="#UNIQUE约束" class="headerlink" title="UNIQUE约束"></a><strong>UNIQUE约束</strong></h3><p>避免不同节点属性重复</p>
+<pre class=" language-SQL"><code class="language-SQL">#创建唯一约束
+create constraint on (n:xiyou) assert n.name is unique
+#删除唯一约束
+drop constraint on (n:xiyou) assert n.name is unique
+</code></pre>
+<h3 id="DISTINCT"><a href="#DISTINCT" class="headerlink" title="DISTINCT"></a><strong>DISTINCT</strong></h3><p>像SQL中的distinct关键字，返回的是所有不同值</p>
+<pre class=" language-SQL"><code class="language-SQL">match (n:`西游`) return distinct(n.name)
+</code></pre>
+<h2 id="4-常用CQL函数"><a href="#4-常用CQL函数" class="headerlink" title="4. 常用CQL函数"></a><strong>4. 常用CQL函数</strong></h2><h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a><strong>字符串函数</strong></h3><p>Neo4J CQL提供了一组String函数，用于在CQL查询中获取所需的结果。</p>
+<table>
+    <thread>
+        <tr>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>UPPER</td>
+            <td>用于将所有字母更改为大写字母</td>
+        </tr>
+        <tr>
+            <td>LOWER</td>
+            <td>用于将所有字母改为小写字母</td>
+        </tr>
+        <tr>
+            <td>SUBSTRING</td>
+            <td>用于获取给定String的子字符串</td>
+        </tr>
+        <tr>
+            <td>REPLACE</td>
+            <td>用于替换一个字符串的子字符串</td>
+        </tr>
+    </thread>    
+</table>
+
+<pre class=" language-SQL"><code class="language-SQL">MATCH (e) RETURN id(e),e.name,substring(e.name,0,2)
+</code></pre>
+<h3 id="AGGREGATION聚合"><a href="#AGGREGATION聚合" class="headerlink" title="AGGREGATION聚合"></a><strong>AGGREGATION聚合</strong></h3><p>Neo4j CQL提供了一些在RETURN子句中使用的聚合函数，它类似于SQL中的GROUP BY子句</p>
+<table>
+    <thread>
+        <tr>
+            <td>COUNT</td>
+            <td>返回由MATCH命令返回的行数</td>
+        </tr>
+        <tr>
+            <td>MAX</td>
+            <td>从MATCH命令返回的一组行返回最大值</td>
+        </tr>
+        <tr>
+            <td>MIN</td>
+            <td>返回由MATCH命令返回的一组行的最小值</td>
+        </tr>
+        <tr>
+            <td>SUM</td>
+            <td>返回由MATCH命令返回的所有行的求和值</td>
+        </tr>
+        <tr>
+            <td>AVG</td>
+            <td>返回由MATCH命令返回的所有行的平均值</td>
+        </tr>
+    </thread>    
+</table>
+
+<pre class=" language-SQL"><code class="language-SQL">MATCH (e) RETURN count(e)
+</code></pre>
+<h3 id="关系函数"><a href="#关系函数" class="headerlink" title="关系函数"></a><strong>关系函数</strong></h3><p>在获取开始节点，结束节点等细节时知道关系的细节。</p>
+<table>
+    <thread>
+        <tr>
+            <td>STARTNODE</td>
+            <td>用于知道关系的开始节点</td>
+        </tr>
+        <tr>
+            <td>ENDNODE </td>
+            <td>用于知道关系的结束节点</td>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td>用于知道关系的ID</td>
+        </tr>
+        <tr>
+            <td>TYPE</td>
+            <td>用于知道字符串表示中的一个关系的TYPE</td>
+        </tr>
+    </thread>    
+</table>
+
+
+<pre class=" language-SQL"><code class="language-SQL">match (a)-[r] ->(b) return id(r),type(r)
+</code></pre>
+<h1 id="Neo4j整合SpringBoot"><a href="#Neo4j整合SpringBoot" class="headerlink" title="Neo4j整合SpringBoot"></a>Neo4j整合SpringBoot</h1><h2 id="1-添加依赖"><a href="#1-添加依赖" class="headerlink" title="1. 添加依赖"></a>1. 添加依赖</h2><p>版本：springboot 2.3.5 spring-data-neo4j:5.3.5</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-neo4j<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
+<h2 id="2-添加配置"><a href="#2-添加配置" class="headerlink" title="2. 添加配置"></a>2. 添加配置</h2><pre class=" language-yml"><code class="language-yml"># neo4j配置
+spring.data.neo4j.uri= bolt://localhost:7687
+spring.data.neo4j.username=neo4j
+spring.data.neo4j.password=12345
+</code></pre>
+<h2 id="3-创建实体"><a href="#3-创建实体" class="headerlink" title="3. 创建实体"></a>3. 创建实体</h2><p>@NodeEntity：标明是一个节点实体 </p>
+<p>@RelationshipEntity：标明是一个关系实体 </p>
+<p>@Id：实体主键</p>
+<p>@Property：实体属性 </p>
+<p>@GeneratedValue：实体属性值自增 </p>
+<p>@StartNode：开始节点（可以理解为父节点） </p>
+<p>@EndNode：结束节点（可以理解为子节点）</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@Builder</span>
+<span class="token annotation punctuation">@NodeEntity</span><span class="token punctuation">(</span><span class="token string">"person"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span>
+    <span class="token keyword">private</span> Long id<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Property</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@NoArgsConstructor</span>
+<span class="token annotation punctuation">@RelationshipEntity</span><span class="token punctuation">(</span>type <span class="token operator">=</span> <span class="token string">"徒弟"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PersonRelation</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span>
+    <span class="token keyword">private</span> Long id<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@StartNode</span>
+    <span class="token keyword">private</span> Person parent<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@EndNode</span>
+    <span class="token keyword">private</span> Person child<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Property</span>
+    <span class="token keyword">private</span> String relation<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">PersonRelation</span><span class="token punctuation">(</span>Person parent<span class="token punctuation">,</span> Person child<span class="token punctuation">,</span> String relation<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> parent<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>child <span class="token operator">=</span> child<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>relation <span class="token operator">=</span> relation<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="4-创建接口继承Neo4jRepository"><a href="#4-创建接口继承Neo4jRepository" class="headerlink" title="4. 创建接口继承Neo4jRepository"></a>4. 创建接口继承Neo4jRepository</h2><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+* @author Fox
+*/</span>
+<span class="token annotation punctuation">@Repository</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">PersonRelationRepository</span> <span class="token keyword">extends</span>
+<span class="token class-name">Neo4jRepository</span><span class="token operator">&lt;</span>PersonRelation<span class="token punctuation">,</span>Long<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token annotation punctuation">@Repository</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">PersonRepository</span> <span class="token keyword">extends</span> <span class="token class-name">Neo4jRepository</span><span class="token operator">&lt;</span>Person<span class="token punctuation">,</span>Long<span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+    * 查询某个节点的所有子节点
+    * @param pId
+    * @return List&lt;Person>
+    */</span>
+    <span class="token annotation punctuation">@Query</span><span class="token punctuation">(</span><span class="token string">"Match (p:person) -[*]->(s:person) where id(p)=&amp;#123;0&amp;#125; return s"</span><span class="token punctuation">)</span>
+    List<span class="token operator">&lt;</span>Person<span class="token operator">></span> <span class="token function">findChildList</span><span class="token punctuation">(</span>Long pId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token annotation punctuation">@Query</span><span class="token punctuation">(</span><span class="token string">"Match (p:person &amp;#123;name:&amp;#123;0&amp;#125;&amp;#125;) -[*]->(s:person) return s"</span><span class="token punctuation">)</span>
+    List<span class="token operator">&lt;</span>Person<span class="token operator">></span> <span class="token function">findChildList</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+    * 查询当前节点的父节点
+    * @param name
+    * @return List&lt;Person>
+    */</span>
+    <span class="token annotation punctuation">@Query</span><span class="token punctuation">(</span><span class="token string">"Match (p:person) -[*]->(s:person &amp;#123;name:&amp;#123;0&amp;#125;&amp;#125;) return p"</span><span class="token punctuation">)</span>
+    List<span class="token operator">&lt;</span>Person<span class="token operator">></span> <span class="token function">findParentList</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="5-测试"><a href="#5-测试" class="headerlink" title="5. 测试"></a>5. 测试</h2><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> PersonRelationRepository personRelationRepository<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> PersonRepository personRepository<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        Person person <span class="token operator">=</span> Person<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"唐僧"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Person person2 <span class="token operator">=</span> Person<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"孙悟空"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Person person3 <span class="token operator">=</span> Person<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"猪八戒"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Person person4 <span class="token operator">=</span> Person<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"沙僧"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Person person5 <span class="token operator">=</span> Person<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"白龙马"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        List<span class="token operator">&lt;</span>Person<span class="token operator">></span> personList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span>person2<span class="token punctuation">,</span>person3<span class="token punctuation">,</span>person4<span class="token punctuation">,</span>person5<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//保存节点数据</span>
+        personRepository<span class="token punctuation">.</span><span class="token function">saveAll</span><span class="token punctuation">(</span>personList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        PersonRelation personRelation <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PersonRelation</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span>person2<span class="token punctuation">,</span><span class="token string">"徒弟"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        PersonRelation personRelation2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PersonRelation</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span>person3<span class="token punctuation">,</span><span class="token string">"徒弟"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        PersonRelation personRelation3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PersonRelation</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span>person4<span class="token punctuation">,</span><span class="token string">"徒弟"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        PersonRelation personRelation4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PersonRelation</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span>person5<span class="token punctuation">,</span><span class="token string">"徒弟"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        List<span class="token operator">&lt;</span>PersonRelation<span class="token operator">></span> personRelationList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>personRelation<span class="token punctuation">,</span> personRelation2<span class="token punctuation">,</span> personRelation3<span class="token punctuation">,</span>personRelation4<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 保存关系数据</span>
+        personRelationRepository<span class="token punctuation">.</span><span class="token function">saveAll</span><span class="token punctuation">(</span>personRelationList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testfindById</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        Optional<span class="token operator">&lt;</span>Person<span class="token operator">></span> byId <span class="token operator">=</span> personRepository<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>53L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>byId<span class="token punctuation">.</span><span class="token function">orElse</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 删除所有personRelation关系数据</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeleteRelationShip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>       
+    <span class="token comment" spellcheck="true">// personRepository.deleteAll();</span>
+        personRelationRepository<span class="token punctuation">.</span><span class="token function">deleteAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 删除所有person节点</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testDeletePerson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//personRepository.deleteById(1L);</span>
+    personRelationRepository<span class="token punctuation">.</span><span class="token function">deleteById</span><span class="token punctuation">(</span>1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/0401undefined.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            HAN蓝海
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/0301undefined.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="Nacos服务发现与配置管理">
+                        
+                        <span class="card-title">Nacos服务发现与配置管理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Nacos是阿里针对微服务架构中的服务发现、配置管理、服务治理的综合型解决方案。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringCloud-Alibaba/">
+                        <span class="chip bg-color">SpringCloud Alibaba</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">HAN蓝海</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "7";
+                    var startDate = "12";
+                    var startHour = "20";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2021011752" target="_blank">皖ICP备2021011752号-1</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/HanBlue" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1090776649@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1090776649" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1090776649" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+	
+	
+
+
+</body>
+
+</html>
