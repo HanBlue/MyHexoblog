@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -478,7 +478,7 @@
                 <h2 id="1．-ElasticStack"><a href="#1．-ElasticStack" class="headerlink" title="1． ElasticStack"></a>1． ElasticStack</h2><h3 id="1-1简介"><a href="#1-1简介" class="headerlink" title="1.1简介"></a>1.1简介</h3><p>ELK是一个免费开源的日志分析架构技术栈总称，官网 <a target="_blank" rel="noopener" href="https://www.elastic.co/cn">https://www.elastic.co/cn</a></p>
 <p>包含三大基础组件，分别是Elasticsearch、Logstash、Kibana。但实际上ELK不仅仅适用于日志分析，它还可以支持其它任何数据搜索、分析和收集的场景。</p>
 <p>随着ELK的发展，又有新成员 Beats、elastic cloud 的加入，所以就形成了 ElasticStack。架构图如下</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/ou7hOe"><img src="https://z3.ax1x.com/2021/11/28/ou7hOe.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/ou7hOe"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://z3.ax1x.com/2021/11/28/ou7hOe.png"></a></p>
 <h3 id="1-2-特点"><a href="#1-2-特点" class="headerlink" title="1.2 特点"></a>1.2 特点</h3><ul>
 <li>处理方式灵活：elasticsearch 是目前最流行的准实时全文检索引擎，具有高速检索大数据的能力。</li>
 <li>配置简单：安装elk的每个组件，仅需配置每个组件的一个配置文件即可。修改处不多，因为大量参数已经默认配在系统中，修改想要修改的选项即可。</li>
@@ -500,7 +500,7 @@
 <p>Elasticsearch 就是基于 Lucene 的搜索服务器，基于 REST 风接口提供了一个分布式多功能搜索引擎，也是是当下最流行的企业级跨平台开源搜索引擎。</p>
 <p>Elasticsearch 能够进行全文检索、结构化检索、数据分析、分布式、近实时对巨量数据进行处理，适用于互联网搜索、网站站内搜索、站内数据分析等多个场景。</p>
 <p>简称为 es，可以看做一个分布式 nosql 数据库，内部采用版本号机制（乐观锁），在竞争不强的情况下性能非常好。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oubIPI"><img src="https://z3.ax1x.com/2021/11/28/oubIPI.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oubIPI"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://z3.ax1x.com/2021/11/28/oubIPI.png"></a></p>
 <h3 id="2-2-核心概念"><a href="#2-2-核心概念" class="headerlink" title="2.2 核心概念"></a>2.2 核心概念</h3><h5 id="Near-Realtime：近实时"><a href="#Near-Realtime：近实时" class="headerlink" title="Near Realtime：近实时"></a>Near Realtime：近实时</h5><p>写入数据时，过1秒才会被搜索到，因为内部在分词、录入索引。es 搜索时：搜索和分析数据需要秒级出结果。</p>
 <h5 id="Cluster：集群"><a href="#Cluster：集群" class="headerlink" title="Cluster：集群"></a>Cluster：集群</h5><p>包含一个或多个启动着 es 实例的机器群。通常一台机器起一个 es 实例。同一网络下，集名一样的多个es实例自动组成集群，自动均衡分片等行为。默认集群名为“elasticsearch”。</p>
 <h5 id="Node：节点"><a href="#Node：节点" class="headerlink" title="Node：节点"></a>Node：节点</h5><p>每个 es 实例称为一个节点。节点名自动分配，也可以手动配置。</p>
@@ -508,7 +508,7 @@
 <p>索引创建规则：</p>
 <ul>
 <li>仅限小写字母</li>
-<li>不能包含\、/、 *、?、”、&lt;、&gt;、|、#以及空格符等特殊符号</li>
+<li>不能包含\、&#x2F;、 *、?、”、&lt;、&gt;、|、#以及空格符等特殊符号</li>
 <li>从7.0版本开始不再包含冒号</li>
 <li>不能以-、_或+开头</li>
 <li>不能超过255个字节（注意它是字节，因此多字节字符将计入255个限制）</li>
@@ -538,33 +538,33 @@
 <p>2、下载和解压缩Elasticsearch安装包，安装后配置文件在 config 目录下的 elasticsearch.yml、jvm.options 和log4j2.properties 内。</p>
 <p>3、启动Elasticsearch：bin\elasticsearch.bat，es的特点就是开箱即，无需配置，启动即可。</p>
 <p>4、检查ES是否启动成功：浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:9200/?pretty">http://localhost:9200/?pretty</a></p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/ouvhdS"><img src="https://z3.ax1x.com/2021/11/28/ouvhdS.md.jpg"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/ouvhdS"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://z3.ax1x.com/2021/11/28/ouvhdS.md.jpg"></a></p>
 <p>5、浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:9200/_cluster/health">http://localhost:9200/_cluster/health</a> 查询集群状态</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/ouxpW9"><img src="https://z3.ax1x.com/2021/11/28/ouxpW9.md.jpg"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/ouxpW9"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://z3.ax1x.com/2021/11/28/ouxpW9.md.jpg"></a></p>
 <h5 id="Windows-安装-Kibana"><a href="#Windows-安装-Kibana" class="headerlink" title="Windows 安装 Kibana"></a>Windows 安装 Kibana</h5><p>1、kibana 是 es 数据的前端展现，数据分析时，可以方便地看到数据。</p>
 <p>2、下载，解压 kibana。</p>
 <p>3、启动 Kibana：bin\kibana.bat</p>
 <p>4、浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:5601/">http://localhost:5601</a> 进入DevTools 界面，支持代码提示。</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/ouxnWd"><img src="https://z3.ax1x.com/2021/11/28/ouxnWd.png"></a></p>
-<h3 id="2-4-操作命令"><a href="#2-4-操作命令" class="headerlink" title="2.4 操作命令"></a>2.4 操作命令</h3><h4 id="1、集群管理"><a href="#1、集群管理" class="headerlink" title="1、集群管理"></a>1、集群管理</h4><h5 id="快速检查集群的健康状况"><a href="#快速检查集群的健康状况" class="headerlink" title="// 快速检查集群的健康状况"></a>// 快速检查集群的健康状况</h5><p>GET /_cat/health?v</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/ouxnWd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://z3.ax1x.com/2021/11/28/ouxnWd.png"></a></p>
+<h3 id="2-4-操作命令"><a href="#2-4-操作命令" class="headerlink" title="2.4 操作命令"></a>2.4 操作命令</h3><h4 id="1、集群管理"><a href="#1、集群管理" class="headerlink" title="1、集群管理"></a>1、集群管理</h4><h5 id="x2F-x2F-快速检查集群的健康状况"><a href="#x2F-x2F-快速检查集群的健康状况" class="headerlink" title="&#x2F;&#x2F; 快速检查集群的健康状况"></a>&#x2F;&#x2F; 快速检查集群的健康状况</h5><p>GET &#x2F;_cat&#x2F;health?v</p>
 <p>green：每个索引都是active状态的。</p>
 <p>yellow：部分replica shard不是active状态。</p>
 <p>red：不是所有索引的primary shard都是active状态的，部分索引有数据丢失了。</p>
-<h5 id="快速查看集群中有哪些索引"><a href="#快速查看集群中有哪些索引" class="headerlink" title="//快速查看集群中有哪些索引"></a>//快速查看集群中有哪些索引</h5><p>GET /_cat/indices?v</p>
-<h4 id="2、文档-CRUD-操作"><a href="#2、文档-CRUD-操作" class="headerlink" title="2、文档 CRUD 操作"></a>2、文档 CRUD 操作</h4><h5 id="新建索引"><a href="#新建索引" class="headerlink" title="//新建索引"></a>//新建索引</h5><p>语法：PUT /index</p>
-<p>PUT /book</p>
-<h5 id="新增文档"><a href="#新增文档" class="headerlink" title="//新增文档"></a>//新增文档</h5><p>语法：PUT /index/type/id</p>
-<p>新增图书：PUT /book/_doc/1{“name”: “Bootstrap开发”,”price”:38.6,}</p>
-<h5 id="检索文档"><a href="#检索文档" class="headerlink" title="//检索文档"></a>//检索文档</h5><p>语法：GET /index/type/id</p>
-<p>查看图书：GET /book/_doc/1  就可看到 json 形式的文档。</p>
-<h5 id="检索返回特定字段"><a href="#检索返回特定字段" class="headerlink" title="//检索返回特定字段"></a>//检索返回特定字段</h5><p>返回图书价格：GET  /book/_doc/1?__source_includes=name,price    </p>
-<h5 id="修改文档"><a href="#修改文档" class="headerlink" title="//修改文档"></a>//修改文档</h5><p>语法：POST  /{index}/_update/{id}</p>
-<p>修改图书的名称：POST /book/_update/1/ {  “doc”: {  “name”: “ Bootstrap开发教程高级” }}</p>
-<h5 id="覆写文档（一般不用，有性能以及并发冲突问题）"><a href="#覆写文档（一般不用，有性能以及并发冲突问题）" class="headerlink" title="//覆写文档（一般不用，有性能以及并发冲突问题）"></a>//覆写文档（一般不用，有性能以及并发冲突问题）</h5><p>PUT /book/_doc/1</p>
-<h5 id="删除文档"><a href="#删除文档" class="headerlink" title="//删除文档"></a>//删除文档</h5><p>DELETE /book/_doc/1</p>
+<h5 id="x2F-x2F-快速查看集群中有哪些索引"><a href="#x2F-x2F-快速查看集群中有哪些索引" class="headerlink" title="&#x2F;&#x2F;快速查看集群中有哪些索引"></a>&#x2F;&#x2F;快速查看集群中有哪些索引</h5><p>GET &#x2F;_cat&#x2F;indices?v</p>
+<h4 id="2、文档-CRUD-操作"><a href="#2、文档-CRUD-操作" class="headerlink" title="2、文档 CRUD 操作"></a>2、文档 CRUD 操作</h4><h5 id="x2F-x2F-新建索引"><a href="#x2F-x2F-新建索引" class="headerlink" title="&#x2F;&#x2F;新建索引"></a>&#x2F;&#x2F;新建索引</h5><p>语法：PUT &#x2F;index</p>
+<p>PUT &#x2F;book</p>
+<h5 id="x2F-x2F-新增文档"><a href="#x2F-x2F-新增文档" class="headerlink" title="&#x2F;&#x2F;新增文档"></a>&#x2F;&#x2F;新增文档</h5><p>语法：PUT &#x2F;index&#x2F;type&#x2F;id</p>
+<p>新增图书：PUT &#x2F;book&#x2F;_doc&#x2F;1{“name”: “Bootstrap开发”,”price”:38.6,}</p>
+<h5 id="x2F-x2F-检索文档"><a href="#x2F-x2F-检索文档" class="headerlink" title="&#x2F;&#x2F;检索文档"></a>&#x2F;&#x2F;检索文档</h5><p>语法：GET &#x2F;index&#x2F;type&#x2F;id</p>
+<p>查看图书：GET &#x2F;book&#x2F;_doc&#x2F;1  就可看到 json 形式的文档。</p>
+<h5 id="x2F-x2F-检索返回特定字段"><a href="#x2F-x2F-检索返回特定字段" class="headerlink" title="&#x2F;&#x2F;检索返回特定字段"></a>&#x2F;&#x2F;检索返回特定字段</h5><p>返回图书价格：GET  &#x2F;book&#x2F;_doc&#x2F;1?__source_includes&#x3D;name,price    </p>
+<h5 id="x2F-x2F-修改文档"><a href="#x2F-x2F-修改文档" class="headerlink" title="&#x2F;&#x2F;修改文档"></a>&#x2F;&#x2F;修改文档</h5><p>语法：POST  &#x2F;{index}&#x2F;_update&#x2F;{id}</p>
+<p>修改图书的名称：POST &#x2F;book&#x2F;_update&#x2F;1&#x2F; {  “doc”: {  “name”: “ Bootstrap开发教程高级” }}</p>
+<h5 id="x2F-x2F-覆写文档（一般不用，有性能以及并发冲突问题）"><a href="#x2F-x2F-覆写文档（一般不用，有性能以及并发冲突问题）" class="headerlink" title="&#x2F;&#x2F;覆写文档（一般不用，有性能以及并发冲突问题）"></a>&#x2F;&#x2F;覆写文档（一般不用，有性能以及并发冲突问题）</h5><p>PUT &#x2F;book&#x2F;_doc&#x2F;1</p>
+<h5 id="x2F-x2F-删除文档"><a href="#x2F-x2F-删除文档" class="headerlink" title="&#x2F;&#x2F;删除文档"></a>&#x2F;&#x2F;删除文档</h5><p>DELETE &#x2F;book&#x2F;_doc&#x2F;1</p>
 <h4 id="3、内置脚本"><a href="#3、内置脚本" class="headerlink" title="3、内置脚本"></a>3、内置脚本</h4><p>es可以内置脚本执行复杂操作，例如查询同时更新。</p>
-<h5 id="修改文档6的-num-字段-1"><a href="#修改文档6的-num-字段-1" class="headerlink" title="//修改文档6的 num 字段+1"></a>//修改文档6的 num 字段+1</h5><p>POST /test_index/_doc/6/_update<br>{<br>   “script” : “ctx._source.num+=1”<br>}</p>
-<h5 id="搜索文档并将-num-字段-2"><a href="#搜索文档并将-num-字段-2" class="headerlink" title="//搜索文档并将 num 字段*2"></a>//搜索文档并将 num 字段*2</h5><pre><code>GET /test_index/_search
+<h5 id="x2F-x2F-修改文档6的-num-字段-1"><a href="#x2F-x2F-修改文档6的-num-字段-1" class="headerlink" title="&#x2F;&#x2F;修改文档6的 num 字段+1"></a>&#x2F;&#x2F;修改文档6的 num 字段+1</h5><p>POST &#x2F;test_index&#x2F;_doc&#x2F;6&#x2F;_update<br>{<br>   “script” : “ctx._source.num+&#x3D;1”<br>}</p>
+<h5 id="x2F-x2F-搜索文档并将-num-字段-2"><a href="#x2F-x2F-搜索文档并将-num-字段-2" class="headerlink" title="&#x2F;&#x2F;搜索文档并将 num 字段*2"></a>&#x2F;&#x2F;搜索文档并将 num 字段*2</h5><pre><code>GET /test_index/_search
 
 &#123;
   &quot;script_fields&quot;: &#123;
@@ -580,8 +580,8 @@
     &#125;
 &#125;
 </code></pre>
-<h4 id="4、手动管理mapping"><a href="#4、手动管理mapping" class="headerlink" title="4、手动管理mapping"></a>4、手动管理mapping</h4><h5 id="查询索引的映射"><a href="#查询索引的映射" class="headerlink" title="//查询索引的映射"></a>//查询索引的映射</h5><p>语法：PUT book/_mapping</p>
-<h5 id="创建映射"><a href="#创建映射" class="headerlink" title="//创建映射"></a>//创建映射</h5><pre><code>PUT book/_mapping
+<h4 id="4、手动管理mapping"><a href="#4、手动管理mapping" class="headerlink" title="4、手动管理mapping"></a>4、手动管理mapping</h4><h5 id="x2F-x2F-查询索引的映射"><a href="#x2F-x2F-查询索引的映射" class="headerlink" title="&#x2F;&#x2F;查询索引的映射"></a>&#x2F;&#x2F;查询索引的映射</h5><p>语法：PUT book&#x2F;_mapping</p>
+<h5 id="x2F-x2F-创建映射"><a href="#x2F-x2F-创建映射" class="headerlink" title="&#x2F;&#x2F;创建映射"></a>&#x2F;&#x2F;创建映射</h5><pre><code>PUT book/_mapping
 &#123;
     &quot;properties&quot;: &#123;
            &quot;name&quot;: &#123;
@@ -596,11 +596,11 @@
 </code></pre>
 <p>通过analyzer属性指定分词器。keyword关键字字段不进行分词，日期类型也不用设置分词器，数值类型尽量选择范围小的类型，提高搜索效率。</p>
 <p>index属性指定是否索引，像是图片的 index 就设置为 false。</p>
-<h5 id="删除映射"><a href="#删除映射" class="headerlink" title="//删除映射"></a>//删除映射</h5><p>删除索引就行。</p>
-<h5 id="修改映射"><a href="#修改映射" class="headerlink" title="//修改映射"></a>//修改映射</h5><p>无法修改，只能通过删除索引重新创建映射来进行操作。</p>
-<h4 id="5、复杂数据类型"><a href="#5、复杂数据类型" class="headerlink" title="5、复杂数据类型"></a>5、复杂数据类型</h4><h5 id="多重字段"><a href="#多重字段" class="headerlink" title="//多重字段"></a>//多重字段</h5><p>{ “tags”: [ “tag1”, “tag2” ]}</p>
-<h5 id="空字段"><a href="#空字段" class="headerlink" title="//空字段"></a>//空字段</h5><p>null，[]，[null]</p>
-<h5 id="对象字段"><a href="#对象字段" class="headerlink" title="//对象字段"></a>//对象字段</h5><pre><code>PUT /company/_doc/1
+<h5 id="x2F-x2F-删除映射"><a href="#x2F-x2F-删除映射" class="headerlink" title="&#x2F;&#x2F;删除映射"></a>&#x2F;&#x2F;删除映射</h5><p>删除索引就行。</p>
+<h5 id="x2F-x2F-修改映射"><a href="#x2F-x2F-修改映射" class="headerlink" title="&#x2F;&#x2F;修改映射"></a>&#x2F;&#x2F;修改映射</h5><p>无法修改，只能通过删除索引重新创建映射来进行操作。</p>
+<h4 id="5、复杂数据类型"><a href="#5、复杂数据类型" class="headerlink" title="5、复杂数据类型"></a>5、复杂数据类型</h4><h5 id="x2F-x2F-多重字段"><a href="#x2F-x2F-多重字段" class="headerlink" title="&#x2F;&#x2F;多重字段"></a>&#x2F;&#x2F;多重字段</h5><p>{ “tags”: [ “tag1”, “tag2” ]}</p>
+<h5 id="x2F-x2F-空字段"><a href="#x2F-x2F-空字段" class="headerlink" title="&#x2F;&#x2F;空字段"></a>&#x2F;&#x2F;空字段</h5><p>null，[]，[null]</p>
+<h5 id="x2F-x2F-对象字段"><a href="#x2F-x2F-对象字段" class="headerlink" title="&#x2F;&#x2F;对象字段"></a>&#x2F;&#x2F;对象字段</h5><pre><code>PUT /company/_doc/1
 &#123;
   &quot;address&quot;: &#123;
     &quot;country&quot;: &quot;china&quot;,
@@ -1151,6 +1151,12 @@ $(function () {
 	
 
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 </html>

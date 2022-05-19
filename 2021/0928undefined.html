@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -480,8 +480,8 @@
 <p><strong>第三步骤</strong>：找出<strong>初始值</strong>。有了<strong>初始值</strong>，并且有了<strong>数组元素之间的关系式</strong>，那么我们就可以得到 dp[n] 的值了，而 dp[n] 的含义是由你来定义的，你想求什么，就定义它是什么，这样，这道题也就解出来了。</p>
 <h2 id="二、常见题目"><a href="#二、常见题目" class="headerlink" title="二、常见题目"></a>二、常见题目</h2><h4 id="1-跳台阶"><a href="#1-跳台阶" class="headerlink" title="1.跳台阶"></a>1.跳台阶</h4><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
 <p>1、定义 dp[i] 的含义为：<strong>跳上一个 i 级的台阶总共有 dp[i] 种跳法</strong></p>
-<p>2、一种是从第 n-1 级跳上来，一种是从第 n-2 级跳上来，所以有 dp[n] = dp[n-1] + dp[n-2]</p>
-<p>3、初始条件，数组不允许下标为负的值，因此直接给出 dp[0] = 0,dp[1] = 1,dp[2] = 2</p>
+<p>2、一种是从第 n-1 级跳上来，一种是从第 n-2 级跳上来，所以有 dp[n] &#x3D; dp[n-1] + dp[n-2]</p>
+<p>3、初始条件，数组不允许下标为负的值，因此直接给出 dp[0] &#x3D; 0,dp[1] &#x3D; 1,dp[2] &#x3D; 2</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span> <span class="token keyword">int</span> n <span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> n<span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//创建数组</span>
@@ -499,10 +499,10 @@
 </code></pre>
 <h4 id="2-求路径"><a href="#2-求路径" class="headerlink" title="2.求路径"></a>2.求路径</h4><p>一个机器人位于一个 m x n 网格的左上角 ，机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角，问总共有多少条不同的路径？</p>
 <p>1、当机器人从左上角走到(i, j) 这个位置时，一共有 dp[i][j] 种路径。因此题目所求为dp[i-1][j-1]</p>
-<p>2、一种是从 (i-1, j) 这个位置走一步到达，一种是从(i, j - 1) 这个位置走一步到达，把所有可能走的路径都加起来，所以关系式是 dp[i][j] = dp[i-1][j] + dp[i][j-1]</p>
+<p>2、一种是从 (i-1, j) 这个位置走一步到达，一种是从(i, j - 1) 这个位置走一步到达，把所有可能走的路径都加起来，所以关系式是 dp[i][j] &#x3D; dp[i-1][j] + dp[i][j-1]</p>
 <p>3、i 和 j 不能为负数，那么可以用 i 和 j 等于0作为初始值。</p>
-<p>dp[0][0….n-1] = 1；//相当于最上面一行，机器人只能一直往右走</p>
-<p>dp[0…m-1][0] = 1; // 相当于最左面一列，机器人只能一直往下走</p>
+<p>dp[0][0….n-1] &#x3D; 1；&#x2F;&#x2F;相当于最上面一行，机器人只能一直往右走</p>
+<p>dp[0…m-1][0] &#x3D; 1; &#x2F;&#x2F; 相当于最左面一列，机器人只能一直往下走</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">Solution</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>m <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token operator">||</span> n <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -528,10 +528,10 @@
 <p>1、走到( i , j )这个位置时，最小路径和为dp[i][j],因此题目所求为</p>
 <p>dp[i-1][j-1]</p>
 <p>2、计算从(i-1,j)和(i,j-1)哪个路线是最小的，因此关系式</p>
-<p>dp[i][j] = min(dp[i-1][j],dp[i][j-1])+arr[i][j]</p>
+<p>dp[i][j] &#x3D; min(dp[i-1][j],dp[i][j-1])+arr[i][j]</p>
 <p>3、同样，i 和 j 都不能为0，我们用最上面一行与最左边一列作为初始值</p>
-<p>dp[0][j] = arr[0][j] + dp[0][j-1]; // 相当于最上面一行，机器人只能一直往右走</p>
-<p>dp[i][0] = arr[i][0] + dp[i-1][0]; // 相当于最左面一列，机器人只能一直往下走</p>
+<p>dp[0][j] &#x3D; arr[0][j] + dp[0][j-1]; &#x2F;&#x2F; 相当于最上面一行，机器人只能一直往右走</p>
+<p>dp[i][0] &#x3D; arr[i][0] + dp[i-1][0]; &#x2F;&#x2F; 相当于最左面一列，机器人只能一直往下走</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">Solution</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> m <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
     <span class="token keyword">int</span> n <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
@@ -556,11 +556,11 @@
 </code></pre>
 <h4 id="4-连续子数组最大和"><a href="#4-连续子数组最大和" class="headerlink" title="4.连续子数组最大和"></a>4.连续子数组最大和</h4><p>给定一个整数数组 <code>nums</code> ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
 <p>1、对于这道题， dp[i] 的含义是<strong>以 nums[i] 结尾的子序的最大和</strong>。那么我们要找的答案就是</p>
-<p>max = max(dp[0], dp[1],….., dp[n-1])</p>
+<p>max &#x3D; max(dp[0], dp[1],….., dp[n-1])</p>
 <p>2、当dp[i-1]是正数，那就要，当dp[i-1]是负数，那就不需要。因此关系式为</p>
-<p>dp[i]=max(dp[i-1]+nums[i],nums[i])</p>
+<p>dp[i]&#x3D;max(dp[i-1]+nums[i],nums[i])</p>
 <p>3、当只有一个元素时，初始值为</p>
-<p>dp[0]=nums[0]</p>
+<p>dp[0]&#x3D;nums[0]</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">Sub</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
@@ -1121,6 +1121,12 @@ $(function () {
 	
 
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 </html>
