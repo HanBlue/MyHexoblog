@@ -324,7 +324,18 @@
 
             <div class="description center-align">
                 
-                    个人技术博客
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['你已不在，唯美长存。','深沉内省，百折不挠。'],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
                 
             </div>
         </div>
@@ -519,7 +530,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05"]
+            data: ["2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08","2022-09"]
         },
         yAxis: {
             type: 'value',
@@ -529,7 +540,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,6,2,2,2,2,1,0,0,2,0,0],
+                data: [2,2,2,1,0,0,2,0,0,0,0,0,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -571,7 +582,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"学习笔记","value":11},{"name":"架构分析","value":1},{"name":"项目记录","value":3},{"name":"随笔","value":1},{"name":"课程作业","value":1}],
+                data: [{"name":"学习笔记","value":11},{"name":"随笔","value":1},{"name":"项目记录","value":3},{"name":"架构分析","value":1},{"name":"课程作业","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -595,7 +606,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["数据结构与算法","毕业设计","架构分析","SpringBoot","成果展示","SpringCloud Alibaba","数据库","Shiro安全控制","SpringCloud","随笔"]
+                data: ["数据结构与算法","毕业设计","架构分析","SpringBoot","成果展示","数据库","随笔","SpringCloud","Shiro安全控制","SpringCloud Alibaba"]
             }
         ],
         yAxis: [
@@ -941,11 +952,9 @@ $(function () {
     
 
     
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="https://fastly.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/background/ribbon.min.js" async="async"></script>
-    
 
+    
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/gh/HanBlue/hanblue.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
